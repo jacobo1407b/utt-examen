@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import firebase from '../utils/firebase';
 import 'firebase/auth';
+import { addStorage } from '../utils/DataBase';
 const Login = () => {
     const [formDta, setFormDta] = useState({ password: "", email: "" });
     const [us, setus] = useState({ user: null })
@@ -17,6 +18,7 @@ const Login = () => {
             .auth()
             .signInWithEmailAndPassword(formDta.email, formDta.password)
             .then(res => {
+                addStorage(res.user.uid)
                 setus({
                     user: res.user,
                 });

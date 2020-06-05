@@ -4,20 +4,26 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Menu from '../Components/Menu/Menu';
 import { isAlumn } from '../utils/DataBase';
 
-const Layout = ({ user }) => {
-    const [dataAlumno, setdataAlumno] = useState({})
+const Layout = ({ user, setreloadApp }) => {
+    const [dataAlumno, setdataAlumno] = useState({ activeExam1: true })
     const [cerrar, setCerrar] = useState(true);
     useEffect(() => {
-        async function getAl() {
-            let response = await isAlumn(user.uid);
-            setdataAlumno(response)
+        function getAl() {
+            isAlumn(user.uid)
+                .then(reqs => {
+                    setdataAlumno(reqs)
+                })
+                .catch(err => {
+                    alert('Error de conexion')
+                })
+
         }
         getAl();
     }, [user])
     return (
         <Router>
             <Menu cerrar={cerrar} />
-            <Routes dataAlumno={dataAlumno} setCerrar={setCerrar} />
+            <Routes dataAlumno={dataAlumno} setCerrar={setCerrar} user={user} setreloadApp={setreloadApp} />
         </Router>
     )
 }
