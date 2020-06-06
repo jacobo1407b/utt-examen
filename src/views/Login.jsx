@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import firebase from '../utils/firebase';
 import 'firebase/auth';
+import 'materialize-css/dist/css/materialize.min.css'
 const Login = () => {
     const [formDta, setFormDta] = useState({ password: "", email: "" });
     const [us, setus] = useState({ user: null })
@@ -27,15 +28,29 @@ const Login = () => {
             })
         e.preventDefault();
     }
+    
     return (
-        <div>
-            Ingreso a examen XD
-            <form onChange={handlerChange} onSubmit={handlerSubmit} us={us}>
-                <input type="email" placeholder="email" name="email" />
-                <input type="text" placeholder="Contraseña" name="password" />
-                <button type="submit">Login</button>
+        
+        <div class ="section container center " border-radius="55px">
+            <form class="" onChange={handlerChange} onSubmit={handlerSubmit} us={us}>
+                <img class="responsive-img center" src="utt.png" width="380px"></img>
+                <br/>
+                <br/>
+                <br/>
+                <div class="card" border-radius="15px">
+                    <div class="card-panel" height="120" width="150">
+                        <input class="container validate" type="email" placeholder="email" name="email" required />
+                    </div>
+                
+                    <div class="card-panel">
+                        <input class="container validate" type="text" placeholder="Contraseña" name="password" required />
+                    </div>
+                
+                    <button class="btn waves-effect waves-light center deep-orange darken-3 container" type="submit">Login</button>
+                    </div>
             </form>
-        </div>
+        </div>  
+       
     )
 }
 const handleErrors = code => {
