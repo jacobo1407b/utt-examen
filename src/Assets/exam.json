@@ -1,0 +1,50 @@
+[ {
+  "pregunta_txt" : "Pediatra es a niño como...",
+  "pregunta_url" : "",
+  "respuesta1" : "Clínica a Pacientes",
+  "respuesta2" : "Geriatra a ancianos",
+  "respuesta3" : "Dermatólogo a Piel",
+  "respuesta4" : "Mujeres a Ginecólogo"
+}, {
+  "pregunta_txt" : "Elija la frase que ejemplifica un texto persuasivo",
+  "pregunta_url" : "",
+  "respuesta1" : "El presidente fue reelegido por 3 años",
+  "respuesta2" : "El agua en necesaria para los seres vivos",
+  "respuesta3" : "Tenía que convencerla de irse a vivir lejos",
+  "respuesta4" : "Mantenga limpia la ciudad, es toda suya"
+}, {
+  "pregunta_txt" : "¿Cuál es la idea principal del párrafo 3?",
+  "pregunta_url" : "https://firebasestorage.googleapis.com/v0/b/seaniutt.appspot.com/o/preguntas%2F82.png?alt=media&token=aa62949b-cf63-4183-b1fb-8522bd331631",
+  "respuesta1" : "Leer mejora nuestra ortografía",
+  "respuesta2" : "La lectura nos proporciona cultura",
+  "respuesta3" : "Leer nos permite ser personas integrales",
+  "respuesta4" : "La lectura incentiva la imaginación"
+}, {
+  "pregunta_txt" : "",
+  "pregunta_url" : "https://firebasestorage.googleapis.com/v0/b/seaniutt.appspot.com/o/preguntas%2F35.png?alt=media&token=4af6767e-a40f-475b-88a6-99dd03d4062c",
+  "respuesta1" : "14",
+  "respuesta2" : "24",
+  "respuesta3" : "42",
+  "respuesta4" : "48"
+}, {
+  "pregunta_txt" : "¿Cuál es el antónimo de servilismo?",
+  "pregunta_url" : "",
+  "respuesta1" : "Servicio",
+  "respuesta2" : "Altanería",
+  "respuesta3" : "Dignidad",
+  "respuesta4" : "Adulación"
+}, {
+  "pregunta_txt" : "",
+  "pregunta_url" : "https://firebasestorage.googleapis.com/v0/b/seaniutt.appspot.com/o/preguntas%2F09.png?alt=media&token=14f9f5f6-d8ca-4911-afb7-4859c645cba6",
+  "respuesta1" : "A",
+  "respuesta2" : "B",
+  "respuesta3" : "C",
+  "respuesta4" : "D"
+}, {
+  "pregunta_txt" : "",
+  "pregunta_url" : "https://firebasestorage.googleapis.com/v0/b/seaniutt.appspot.com/o/preguntas%2F66.png?alt=media&token=7e8eab77-883b-4e11-887c-4e1b5b91f8c7",
+  "respuesta1" : "Puntos, comas y comillas",
+  "respuesta2" : "Puntos, comas y paréntesis",
+  "respuesta3" : "Paréntesis, comillas y comas",
+  "respuesta4" : "Comas, paréntesis y signos de admiración"
+} ]

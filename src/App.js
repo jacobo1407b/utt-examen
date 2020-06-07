@@ -7,6 +7,7 @@ import Layout from './Layouts/Layout';
 function App() {
   const [user, setuser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [reloadApp, setreloadApp] = useState(false)
   firebase.auth().onAuthStateChanged(currentUser => {
     // if (!currentUser?.emailVerified) {
     //  firebase.auth().signOut();
@@ -23,7 +24,7 @@ function App() {
   return (
     <>
       {
-        !user ? (<Login />) : (<Layout user={user} />)
+        !user ? (<Login />) : (<Layout user={user} setreloadApp={setreloadApp} reloadApp={reloadApp} />)
       }
     </>
   );

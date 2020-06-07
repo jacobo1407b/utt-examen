@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import firebase from '../utils/firebase';
 import 'firebase/auth';
-import 'materialize-css/dist/css/materialize.min.css'
+
+import 'materialize-css/dist/css/materialize.css'
+
+import { addStorage } from '../utils/DataBase';
+
 const Login = () => {
     const [formDta, setFormDta] = useState({ password: "", email: "" });
     const [us, setus] = useState({ user: null })
@@ -18,6 +22,7 @@ const Login = () => {
             .auth()
             .signInWithEmailAndPassword(formDta.email, formDta.password)
             .then(res => {
+                addStorage(res.user.uid)
                 setus({
                     user: res.user,
                 });
@@ -31,13 +36,13 @@ const Login = () => {
     
     return (
         
-        <div class ="section container center " border-radius="55px">
-            <form class="" onChange={handlerChange} onSubmit={handlerSubmit} us={us}>
+        <div class ="container center " border-radius="55px">
+            <form class="container" onChange={handlerChange} onSubmit={handlerSubmit} us={us}>
                 <img class="responsive-img center" src="utt.png" width="380px"></img>
                 <br/>
                 <br/>
                 <br/>
-                <div class="card" border-radius="15px">
+                <div class="">
                     <div class="card-panel" height="120" width="150">
                         <input class="container validate" type="email" placeholder="email" name="email" required />
                     </div>
