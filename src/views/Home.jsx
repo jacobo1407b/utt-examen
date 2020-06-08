@@ -13,8 +13,8 @@ const Home = ({ dataAlumno, history }) => {
     }
 
     return (
-        <div>
-            <button onClick={handlerExam1}>Examen 1</button>
+        <div className="container">
+            <button  className="btn-large" onClick={handlerExam1}>Examen 1</button>
         </div>
     )
 }
