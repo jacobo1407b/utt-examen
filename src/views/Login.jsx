@@ -9,6 +9,7 @@ import { addStorage } from '../utils/DataBase';
 const Login = () => {
     const [formDta, setFormDta] = useState({ password: "", email: "" });
     const [us, setus] = useState({ user: null })
+    const [isloadin, setIsloadin] = useState(false);
     const handlerChange = e => {
         const { value, name } = e.target;
         setFormDta({
@@ -18,6 +19,7 @@ const Login = () => {
     }
 
     const handlerSubmit = (e) => {
+        setIsloadin(true);
         firebase
             .auth()
             .signInWithEmailAndPassword(formDta.email, formDta.password)
@@ -28,34 +30,50 @@ const Login = () => {
                 });
             })
             .catch(err => {
-                console.log(err);
+                setIsloadin(false);
                 handleErrors(err.code);
             })
         e.preventDefault();
     }
-    
+    const Load =
+        (<div className="preloader-wrapper big active">
+            <div className="spinner-layer spinner-blue">
+                <div className="circle-clipper left">
+                    <div className="circle"></div>
+                </div><div className="gap-patch">
+                    <div className="circle"></div>
+                </div><div className="circle-clipper right">
+                    <div className="circle"></div>
+                </div>
+            </div>
+        </div>)
     return (
-        
-        <div class ="container center " border-radius="55px">
-            <form class="container" onChange={handlerChange} onSubmit={handlerSubmit} us={us}>
-                <img class="responsive-img center" src="utt.png" width="380px"></img>
-                <br/>
-                <br/>
-                <br/>
-                <div class="">
-                    <div class="card-panel" height="120" width="150">
-                        <input class="container validate" type="email" placeholder="email" name="email" required />
+
+        <div className="container center " border-radius="55px">
+            <form className="container" onChange={handlerChange} onSubmit={handlerSubmit} us={us}>
+                <img className="responsive-img center" src="utt.png" alt="utt-img" width="380px" />
+                <br />
+                <br />
+                <br />
+                <div className="">
+                    <div className="card-panel" height="120" width="150">
+                        <input className="container validate" type="email" placeholder="email" name="email" required />
                     </div>
-                
-                    <div class="card-panel">
-                        <input class="container validate" type="text" placeholder="Contraseña" name="password" required />
+
+                    <div className="card-panel">
+                        <input className="container validate" type="text" placeholder="Contraseña" name="password" required />
                     </div>
-                
-                    <button class="btn waves-effect waves-light center deep-orange darken-3 container" type="submit">Login</button>
-                    </div>
+                    {!isloadin ? (
+                        <button className="btn waves-effect waves-light center deep-orange darken-3 container" type="submit">Login</button>
+                    ) : (
+                            Load
+                        )}
+
+                </div>
             </form>
-        </div>  
-       
+
+        </div>
+
     )
 }
 const handleErrors = code => {
