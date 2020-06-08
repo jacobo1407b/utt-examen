@@ -3,6 +3,7 @@ import firebase from '../utils/firebase';
 import 'firebase/auth';
 import 'material-design-icons'
 import 'materialize-css/dist/css/materialize.css'
+import M from 'materialize-css'
 
 import { addStorage } from '../utils/DataBase';
 
@@ -55,20 +56,19 @@ const Login = () => {
                 <br/>
                 <br/>
                 <br/>
-                <div class="">
-                    <div class="card-panel" height="120" width="150">
-
+                <div class="row">
+        
+                    <div class="card-panel col s12" height="120" width="150">
+                        
                         <input class="container validate" type="email" placeholder="email" name="email" required />
-
+                        
                     </div>
 
-                    <div class="card-panel">
-                        <input class="container validate" type="text" placeholder="Contraseña" name="password" required />
+                    <div class="card-panel col s12" height="120" width="150">
+                        
+                        <input class="container validate" type="password" placeholder="Contraseña" name="password" required />
                     </div>
 
-                    <div className="card-panel">
-                        <input className="container validate" type="text" placeholder="Contraseña" name="password" required />
-                    </div>
                     {!isloadin ? (
                         <button className="btn waves-effect waves-light center deep-orange darken-3 container" type="submit">Login</button>
                     ) : (
