@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import firebase from '../utils/firebase';
 import 'firebase/auth';
-import 'material-design-icons'
 import 'materialize-css/dist/css/materialize.css'
 import M from 'materialize-css'
 
@@ -50,27 +49,28 @@ const Login = () => {
         </div>)
     return (
 
-        <div class ="container center " border-radius="55px">
-            <form class="container" onChange={handlerChange} onSubmit={handlerSubmit} us={us}>
-                <img class="responsive-img center" src="utt.png" width="380px"></img>
-                <br/>
-                <br/>
-                <br/>
-                <div class="row">
-        
-                    <div class="card-panel col s12" height="120" width="150">
-                        
-                        <input class="container validate" type="email" placeholder="email" name="email" required />
-                        
-                    </div>
+        <div className="container center " border-radius="55px">
+            <form className="container" onChange={handlerChange} onSubmit={handlerSubmit} us={us}>
+                <img className="responsive-img center" src="utt.png" alt="utt-img" width="380px" />
+                <br />
+                <br />
+                <br />
+                <div className="container">
+                        <div className="card-panel hoverable grey lighten-5" height="120" width="150">
+                            <div class="input-field">
+                                <i className="material-icons prefix orange-text">email</i>
+                                <input className="container validate" type="email"  placeholder="Email"name="email" required />
 
-                    <div class="card-panel col s12" height="120" width="150">
-                        
-                        <input class="container validate" type="password" placeholder="Contraseña" name="password" required />
-                    </div>
-
+                            </div>
+                        </div>
+                        <div className="card-panel hoverable grey lighten-5">
+                            <div class="input-field col s6">
+                                <i className="material-icons prefix orange-text">enhanced_encryption</i>
+                            <input className="container validate" type="text" placeholder="Contraseña" name="password" required />
+                            </div>
+                        </div>
                     {!isloadin ? (
-                        <button className="btn waves-effect waves-light center deep-orange darken-3 container" type="submit">Login</button>
+                        <button className="waves-effect waves-light btn center deep-orange hoverable" type="submit">Login</button>
                     ) : (
                             Load
                         )}
