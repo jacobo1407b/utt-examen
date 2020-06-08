@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import firebase from '../utils/firebase';
 import 'firebase/auth';
-
-import 'materialize-css/dist/css/materialize.css'
-
 import { addStorage } from '../utils/DataBase';
+import M from 'materialize-css';
 
 const Login = () => {
     const [formDta, setFormDta] = useState({ password: "", email: "" });
@@ -28,6 +26,7 @@ const Login = () => {
                 setus({
                     user: res.user,
                 });
+                setIsloadin(false);
             })
             .catch(err => {
                 setIsloadin(false);
@@ -36,8 +35,8 @@ const Login = () => {
         e.preventDefault();
     }
     const Load =
-        (<div className="preloader-wrapper big active">
-            <div className="spinner-layer spinner-blue">
+        (<div className="preloader-wrapper small active">
+            <div className="spinner-layer spinner-green-only">
                 <div className="circle-clipper left">
                     <div className="circle"></div>
                 </div><div className="gap-patch">
@@ -79,7 +78,7 @@ const Login = () => {
 const handleErrors = code => {
     switch (code) {
         case "auth/wrong-password":
-            alert("El usuario o contraseña son incorrectos")
+            M.toast({ html: 'El usuario o contraseña son incorrectos' })
             break;
         case "auth/too-many-requests":
             alert("Has enviado demasiadas solicitudes de envio")
