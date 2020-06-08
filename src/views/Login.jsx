@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import firebase from '../utils/firebase';
 import 'firebase/auth';
-
 import 'materialize-css/dist/css/materialize.css'
 
 import { addStorage } from '../utils/DataBase';
