@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import firebase from '../utils/firebase';
 import 'firebase/auth';
-
+import 'material-design-icons'
 import 'materialize-css/dist/css/materialize.css'
 
 import { addStorage } from '../utils/DataBase';
@@ -44,7 +44,9 @@ const Login = () => {
                 <br/>
                 <div class="">
                     <div class="card-panel" height="120" width="150">
+                        
                         <input class="container validate" type="email" placeholder="email" name="email" required />
+                        
                     </div>
                 
                     <div class="card-panel">
