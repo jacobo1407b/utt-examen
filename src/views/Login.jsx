@@ -55,18 +55,18 @@ const Login = () => {
                 <br />
                 <br />
                 <br />
-                <div className="container">
-                        <div className="card-panel hoverable grey lighten-5" height="120" width="150">
-                            <div class="input-field">
-                                <i className="material-icons prefix orange-text">email</i>
+                <div className="row">
+                        <div className="card-panel hoverable grey lighten-5 col s12" height="120" width="150">
+                            <div class="input-field ">
+                                <i className="material-icons prefix green-text">account_circle</i>
                                 <input className="container validate" type="email"  placeholder="Email"name="email" required />
 
                             </div>
                         </div>
-                        <div className="card-panel hoverable grey lighten-5">
-                            <div class="input-field col s6">
-                                <i className="material-icons prefix orange-text">enhanced_encryption</i>
-                            <input className="container validate" type="text" placeholder="Contraseña" name="password" required />
+                        <div className="card-panel hoverable grey lighten-5 col s12">
+                            <div class="input-field ">
+                                <i className="material-icons prefix green-text">enhanced_encryption</i>
+                            <input className="container validate" type="password" placeholder="Contraseña" name="password" required />
                             </div>
                         </div>
                     {!isloadin ? (
