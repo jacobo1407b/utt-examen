@@ -49,10 +49,10 @@ const Exam1 = ({ dataAlumno, history, setCerrar, match, user, setreloadApp }) =>
     return (
         <div>
             {elegir(match.params.num)}
-            <button onClick={() => handlerMatch(match.params.num)}>Next.js</button>
+            <button className="btn-large" onClick={() => handlerMatch(match.params.num)}>Siguiente</button>
             <h1>aqui las bolitas con el item activo {match.params.num}/6</h1>
             <Reloj user={user} setreloadApp={setreloadApp} />
-            <button onClick={exitExam}>Salir</button>
+            <button className="btn-large" onClick={exitExam}>Salir</button>
         </div>
     )
 }
