@@ -51,6 +51,7 @@ const Login = () => {
 
         <div className="container center " border-radius="55px">
             <form className="container" onChange={handlerChange} onSubmit={handlerSubmit} us={us}>
+                <br></br>
                 <img className="responsive-img center" src="utt.png" alt="utt-img" width="380px" />
                 <br />
                 <br />

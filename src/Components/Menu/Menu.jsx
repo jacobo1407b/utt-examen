@@ -14,28 +14,37 @@ const Menu = (props) => {
     }
     return (
         <div>
-
+            <ul id="ListPreguntas" class="dropdown-content">
+                <li><a href="#!">one</a></li>
+                <li><a href="#!">two</a></li>
+                <li className="divider"></li>
+                <li><a href="#!">three</a></li>
+            </ul>
             <nav>
-                <div className="nav-wrapper green darken-3">
-                    <a href="#!" className="brand-logo">Logo</a>
-                    <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-                    <ul className="right hide-on-med-and-down">
-                        <li><a href="sass.html">Sass</a></li>
-                        <li><a href="badges.html">Components</a></li>
-                        <li><a href="collapsible.html">Javascript</a></li>
-                        {cerrar ? (<li><a onClick={logout}>Cerrar</a></li>) : null}
 
-                    </ul>
+                <div className="nav-wrapper green darken-3">
+                    <a className="dropdown-trigger brand-logo" href="#!" data-target="ListPreguntas">Preguntas<i className="material-icons right">arrow_drop_down</i></a>
+                    <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+                    {cerrar ? (
+                        <a className="btn-floating btn-large halfway-fab waves-effect waves-light red" onClick={logout} title="cerrar sesión">
+                            <i className="material-icons">exit_to_app</i>
+                        </a>
+                    ) : null}
+
                 </div>
             </nav>
-            <ul className="sidenav" id="mobile-demo">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">Javascript</a></li>
-                <li><a href="mobile.html">Mobile</a></li>
-            </ul>
+            <div>
+
+            </div>
+
         </div>
     )
 }
 
+
 export default withRouter(Menu)
+
+/**
+ *
+ * {cerrar ? (<li><a onClick={logout}>Cerrar</a></li>) : null}
+ */
