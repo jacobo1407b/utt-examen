@@ -14,27 +14,26 @@ const Menu = (props) => {
     }
     return (
         <div>
-
+            <ul id="ListPreguntas" class="dropdown-content">
+                <li><a href="#!">one</a></li>
+                <li><a href="#!">two</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">three</a></li>
+                </ul>
             <nav>
+                
                 <div class="nav-wrapper green darken-3">
-                    <a href="#!" class="brand-logo">Logo</a>
+                    <a class="dropdown-trigger brand-logo" href="#!" data-target="ListPreguntas">Preguntas<i class="material-icons right">arrow_drop_down</i></a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="sass.html">Sass</a></li>
-                        <li><a href="badges.html">Components</a></li>
-                        <li><a href="collapsible.html">Javascript</a></li>
-                        <li><a href="mobile.html">Mobile</a></li>
-                    </ul>
+                    <a class="btn-floating btn-large halfway-fab waves-effect waves-light red" onClick={logout}  title="cerrar sesión">
+                    <i class="material-icons">exit_to_app</i>
+                    </a>
                 </div>
             </nav>
-            <ul class="sidenav" id="mobile-demo">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">Javascript</a></li>
-                <li><a href="mobile.html">Mobile</a></li>
-            </ul>
+            <div>
+                
+            </div>
 
-            {cerrar ? (<button onClick={logout}>Cerrar sesion</button>) : (null)}
         </div>
     )
 }
