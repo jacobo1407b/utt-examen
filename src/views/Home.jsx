@@ -13,8 +13,8 @@ const Home = ({ dataAlumno, history }) => {
     }
 
     return (
-        <div class="container center">
-            <button class="waves-effect waves-light btn-large deep-orange darken-3 container" onClick={handlerExam1}>Examen 1</button>
+        <div className="container center">
+            <button className="waves-effect waves-light btn-large deep-orange darken-3 container" onClick={handlerExam1}>Examen 1</button>
         </div>
     )
 }

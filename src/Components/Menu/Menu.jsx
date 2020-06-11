@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import firebase from '../../utils/firebase';
 import 'firebase/auth';
 import { withRouter } from 'react-router-dom';
@@ -16,25 +16,24 @@ const Menu = (props) => {
         <div>
 
             <nav>
-                <div class="nav-wrapper green darken-3">
-                    <a href="#!" class="brand-logo">Logo</a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
+                <div className="nav-wrapper green darken-3">
+                    <a href="#!" className="brand-logo">Logo</a>
+                    <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+                    <ul className="right hide-on-med-and-down">
                         <li><a href="sass.html">Sass</a></li>
                         <li><a href="badges.html">Components</a></li>
                         <li><a href="collapsible.html">Javascript</a></li>
-                        <li><a href="mobile.html">Mobile</a></li>
+                        {cerrar ? (<li><a onClick={logout}>Cerrar</a></li>) : null}
+
                     </ul>
                 </div>
             </nav>
-            <ul class="sidenav" id="mobile-demo">
+            <ul className="sidenav" id="mobile-demo">
                 <li><a href="sass.html">Sass</a></li>
                 <li><a href="badges.html">Components</a></li>
                 <li><a href="collapsible.html">Javascript</a></li>
                 <li><a href="mobile.html">Mobile</a></li>
             </ul>
-
-            {cerrar ? (<button onClick={logout}>Cerrar sesion</button>) : (null)}
         </div>
     )
 }

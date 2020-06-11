@@ -8,6 +8,7 @@ const Login = () => {
     const [formDta, setFormDta] = useState({ password: "", email: "" });
     const [us, setus] = useState({ user: null })
     const [isloadin, setIsloadin] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
     const handlerChange = e => {
         const { value, name } = e.target;
         setFormDta({
@@ -56,16 +57,16 @@ const Login = () => {
                 <br />
                 <div className="row">
                     <div className="card-panel hoverable grey lighten-5 col s12" height="120" width="150">
-                        <div class="input-field ">
+                        <div className="input-field ">
                             <i className="material-icons prefix green-text">account_circle</i>
                             <input className="container validate" type="email" placeholder="Email" name="email" required />
 
                         </div>
                     </div>
                     <div className="card-panel hoverable grey lighten-5 col s12">
-                        <div class="input-field ">
-                            <i className="material-icons prefix green-text">enhanced_encryption</i>
-                            <input className="container validate" type="password" placeholder="Contraseña" name="password" required />
+                        <div className="input-field ">
+                            <i className="material-icons prefix green-text" onClick={() => setShowPassword(prev => !prev)}>enhanced_encryption</i>
+                            <input className="container validate" type={showPassword ? "text" : "password"} placeholder="Contraseña" name="password" required />
                         </div>
                     </div>
                     {!isloadin ? (
@@ -87,10 +88,10 @@ const handleErrors = code => {
             M.toast({ html: 'El usuario o contraseña son incorrectos' })
             break;
         case "auth/too-many-requests":
-            alert("Has enviado demasiadas solicitudes de envio")
+            M.toast({ html: 'Has enviado demasiadas solicitudes de envio' })
             break;
         case "auth/user-not-found":
-            alert("usuario no encontrado")
+            M.toast({ html: 'usuario no encontrado' })
             break;
         default:
             break;
