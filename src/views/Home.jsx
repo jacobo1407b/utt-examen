@@ -1,11 +1,12 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import { toast } from 'materialize-css';
 const Home = ({ dataAlumno, history }) => {
 
 
     const handlerExam1 = () => {
         if (!dataAlumno.activeExam1) {
-            alert('Este examen esta desactivado')
+            toast({ html: 'Este examen esta desactivado' })
             return false
         }
         document.documentElement.requestFullscreen()

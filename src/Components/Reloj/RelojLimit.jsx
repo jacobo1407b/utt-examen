@@ -1,5 +1,5 @@
 import React from 'react';
-import { updateActiveExamen } from '../../utils/DataBase';
+import { updateActiveExamen, updateTimeImpli } from '../../utils/DataBase';
 import { withRouter } from 'react-router-dom';
 import Swal from 'sweetalert2';
 class RelojLimit extends React.Component {
@@ -53,6 +53,10 @@ class RelojLimit extends React.Component {
         // Check if we're at zero.
         if (seconds === 15) {
             alert('tu examen esta apunto de terminar')
+        }
+        if (seconds === 900) {
+            alert('15 minutos para finalizar')
+            updateTimeImpli(900);
         }
         if (seconds === 0 || seconds < 0) {
             clearInterval(this.timer);
