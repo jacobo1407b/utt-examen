@@ -1,21 +1,26 @@
 import React, { useState } from 'react'
+import { updateResExam } from '../../utils/DataBase';
+const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
 
-const Pregunta1 = ({ dtajs, dataAlumno }) => {
-
-    const [respuestasAlumno, setRespuestasAlumno] = useState(dataAlumno || [])
+    const [tempResp, setTempResp] = useState({});
     const handlerElegirRespuesta = (e) => {
-        setRespuestasAlumno([
-            ...respuestasAlumno,
-            {
-                pregunta: dtajs._id,
-                respuesta: e.target.value
-            }
-        ])
-        console.log(e.target.value)
+        setTempResp({
+            pregunta: dtajs._id,
+            respuesta: e.target.value
+        })
     }
     const handlerSubmit = e => {
-        console.log(respuestasAlumno)
         e.preventDefault();
+        let conver = parseInt(posision);
+        if (!tempResp.pregunta || !tempResp.pregunta) {
+            alert('Selecciona una opcion');
+            return false;
+        } else {
+            dataAlumno[conver] = tempResp;
+            updateResExam(localStorage.getItem('document'), dataAlumno);
+            setTempResp({})
+        }
+
     }
     return (
         <div>

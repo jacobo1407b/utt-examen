@@ -3,7 +3,8 @@ import { withRouter } from 'react-router-dom';
 import data from '../Assets/exam.json'
 import Pregunta1 from '../Components/Examen/Pregunta1';
 import Reloj from '../Components/Reloj/RelojLimit';
-import { updateActiveExamen } from '../utils/DataBase';
+import ModalBasic from '../Components/Modal/ModalBasic';
+
 const Exam1 = ({ dataAlumno, history, setCerrar, match, user, setreloadApp }) => {
 
     useEffect(() => {
@@ -23,7 +24,7 @@ const Exam1 = ({ dataAlumno, history, setCerrar, match, user, setreloadApp }) =>
         if (numero >= 7) {
             history.goBack();
         }
-        return <Pregunta1 dtajs={data[parseInt(numero)]} dataAlumno={dataAlumno.alumnExam.test} />
+        return <Pregunta1 dtajs={data[parseInt(numero)]} dataAlumno={dataAlumno.alumnExam ? dataAlumno.alumnExam.test : []} posision={numero} />
     }
     const handlerMatch = (num) => {
         if (num === "6") {
@@ -40,16 +41,7 @@ const Exam1 = ({ dataAlumno, history, setCerrar, match, user, setreloadApp }) =>
         history.push(`/exam1/${newNum}`)
     }
     const exitExam = () => {
-        if (localStorage.getItem('time') > 0) {
-            alert('tienes tiempo, puedes revisar tus preguntas');
-            updateActiveExamen(localStorage.getItem('document'))
-            history.push('/')
-        }
-        else {
-            alert('tu examen sera revisado')
-            updateActiveExamen(localStorage.getItem('document'))
-            history.push('/')
-        }
+        history.push('/')
     }
     return (
         <div>
@@ -60,7 +52,7 @@ const Exam1 = ({ dataAlumno, history, setCerrar, match, user, setreloadApp }) =>
                 <button className="btn-large" onClick={() => handlerMenos(match.params.num)}>Anterior</button>
             )}
             <button className="btn-large" onClick={() => handlerMatch(match.params.num)}>Siguiente</button>
-            <button className="btn-large" onClick={exitExam}>Salir</button>
+            <ModalBasic exitExam={exitExam} />
         </div>
     )
 }

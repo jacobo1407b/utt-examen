@@ -1,6 +1,7 @@
 import React from 'react';
 import { updateActiveExamen } from '../../utils/DataBase';
 import { withRouter } from 'react-router-dom';
+import Swal from 'sweetalert2';
 class RelojLimit extends React.Component {
     constructor() {
         super();
@@ -50,7 +51,7 @@ class RelojLimit extends React.Component {
         });
 
         // Check if we're at zero.
-        if (seconds === 5) {
+        if (seconds === 15) {
             alert('tu examen esta apunto de terminar')
         }
         if (seconds === 0 || seconds < 0) {
@@ -59,10 +60,14 @@ class RelojLimit extends React.Component {
                 time: { h: 0, m: 0, s: 0 }
             });
             localStorage.setItem('time', 0)
-            alert('tu examen sera revisado')
-            updateActiveExamen(localStorage.getItem('document'))
-            this.props.setreloadApp(prev => !prev)
-            this.props.history.push('/')
+            Swal.fire(
+                'El tiempo finalizo',
+            )
+            function cb() {
+                window.location.reload();
+                window.location = '/'
+            }
+            updateActiveExamen(localStorage.getItem('document'), cb)
         }
     }
 

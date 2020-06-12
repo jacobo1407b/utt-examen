@@ -5,7 +5,6 @@ export const isAlumn = async uid => {
     const response = await db
         .collection("alumnos")
         .where("user", "==", uid).get()
-    console.log(response.docs[0].data())
     return response.docs[0].data()
 }
 
@@ -31,6 +30,12 @@ export const addStorage = async uid => {
     }
 }
 
-export const updateActiveExamen = async idcollection => {
+export const updateActiveExamen = async (idcollection, cb) => {
     db.doc(`alumnos/${idcollection}`).update({ activeExam1: false })
+        .then(() => {
+            cb();
+        })
+}
+export const updateResExam = async (idcoll, arrRespuestas) => {
+    db.doc(`alumnos/${idcoll}`).update({ alumnExam: { test: arrRespuestas } })
 }
