@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { updateResExam } from '../../utils/DataBase';
-
 import Radio from '@material-ui/core/Radio';
 
 
@@ -26,7 +25,7 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
         e.preventDefault();
 
         if (!tempResp.pregunta || !tempResp.pregunta) {
-            alert('Selecciona una opcion');
+            alert('Ingresa un valor')
             return false;
         } else {
             dataAlumno[conver] = tempResp;
@@ -44,7 +43,6 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
                 <img src={dtajs.pregunta_url} alt="pregunta" />
             ) : null}
             <form onSubmit={handlerSubmit}>
-
                 <label>
                     <Radio
                         checked={selectValue === dtajs.respuesta1}
@@ -87,7 +85,6 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
                 </label>
                 <button type="submit">Guardar</button>
             </form>
-
         </div>
     )
 }
