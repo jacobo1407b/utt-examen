@@ -45,7 +45,7 @@ class Modal extends Component {
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
+                confirmButtonText: 'Si estoy totalmente seguro!'
             }).then((result) => {
                 if (result.value) {
                     // localStorage.setItem('time', 0)
