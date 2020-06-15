@@ -1,17 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { updateResExam } from '../../utils/DataBase';
-const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
 
+import Radio from '@material-ui/core/Radio';
+
+
+
+const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
+    let conver = parseInt(posision);
+    let valorActive = dataAlumno[conver] ? dataAlumno[conver] : '';
     const [tempResp, setTempResp] = useState({});
+    const [selectValue, setSelectValue] = useState(valorActive.respuesta)
+    useEffect(() => {
+        setSelectValue(valorActive.respuesta)
+    }, [valorActive.respuesta])
     const handlerElegirRespuesta = (e) => {
         setTempResp({
             pregunta: dtajs._id,
             respuesta: e.target.value
         })
+        setSelectValue(e.target.value);
     }
+
+
     const handlerSubmit = e => {
         e.preventDefault();
-        let conver = parseInt(posision);
+
         if (!tempResp.pregunta || !tempResp.pregunta) {
             alert('Selecciona una opcion');
             return false;
@@ -30,31 +43,48 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
             {dtajs.pregunta_url ? (
                 <img src={dtajs.pregunta_url} alt="pregunta" />
             ) : null}
-            <form onChange={handlerElegirRespuesta} onSubmit={handlerSubmit}>
-                <p>
-                    <label>
-                        <input name="group1" type="radio" value={dtajs.respuesta1} />
-                        <span>{dtajs.respuesta1}</span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input name="group1" type="radio" value={dtajs.respuesta2} />
-                        <span>{dtajs.respuesta2}</span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input className="with-gap" name="group1" type="radio" value={dtajs.respuesta3} />
-                        <span>{dtajs.respuesta3}</span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input name="group1" type="radio" value={dtajs.respuesta4} />
-                        <span>{dtajs.respuesta4}</span>
-                    </label>
-                </p>
+            <form onSubmit={handlerSubmit}>
+
+                <label>
+                    <Radio
+                        checked={selectValue === dtajs.respuesta1}
+                        onChange={handlerElegirRespuesta}
+                        value={dtajs.respuesta1}
+                        name="radio-button-demo"
+                        inputProps={{ 'aria-label': 'A' }}
+                    />
+                    <span>{dtajs.respuesta1}</span>
+                </label>
+                <label>
+                    <Radio
+                        checked={selectValue === dtajs.respuesta2}
+                        onChange={handlerElegirRespuesta}
+                        value={dtajs.respuesta2}
+                        name="radio-button-demo"
+                        inputProps={{ 'aria-label': 'A' }}
+                    />
+                    <span>{dtajs.respuesta2}</span>
+                </label>
+                <label>
+                    <Radio
+                        checked={selectValue === dtajs.respuesta3}
+                        onChange={handlerElegirRespuesta}
+                        value={dtajs.respuesta3}
+                        name="radio-button-demo"
+                        inputProps={{ 'aria-label': 'A' }}
+                    />
+                    <span>{dtajs.respuesta3}</span>
+                </label>
+                <label>
+                    <Radio
+                        checked={selectValue === dtajs.respuesta4}
+                        onChange={handlerElegirRespuesta}
+                        value={dtajs.respuesta4}
+                        name="radio-button-demo"
+                        inputProps={{ 'aria-label': 'A' }}
+                    />
+                    <span>{dtajs.respuesta4}</span>
+                </label>
                 <button type="submit">Guardar</button>
             </form>
 
