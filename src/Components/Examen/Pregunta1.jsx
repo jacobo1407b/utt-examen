@@ -35,12 +35,12 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
 
     }
     return (
-        <div>
+        <div className="container">
             {dtajs.pregunta_txt ? (
                 <h1>{dtajs.pregunta_txt}</h1>
             ) : null}
             {dtajs.pregunta_url ? (
-                <img src={dtajs.pregunta_url} alt="pregunta" />
+                <img className="responsive-img" src={dtajs.pregunta_url} alt="pregunta" width="850px"/>
             ) : null}
             <form onSubmit={handlerSubmit}>
                 <label>

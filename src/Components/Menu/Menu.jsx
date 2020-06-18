@@ -12,10 +12,10 @@ const Menu = (props) => {
     return (
         <div>
             <ul id="ListPreguntas" className="dropdown-content">
-                <li><a href="#!">one</a></li>
-                <li><a href="#!">two</a></li>
+                <li><a>one</a></li>
+                <li><a>two</a></li>
                 <li className="divider"></li>
-                <li><a href="#!">three</a></li>
+                <li><a>three</a></li>
             </ul>
             <nav>
 
