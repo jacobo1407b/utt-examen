@@ -10,7 +10,7 @@ const Home = ({ dataAlumno, history }) => {
             return false
         }
         document.documentElement.requestFullscreen()
-        history.push('/exam1/0')
+        history.push('/exam1/1')
     }
 
     return (

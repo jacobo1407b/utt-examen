@@ -28,10 +28,10 @@ const Exam1 = ({ dataAlumno, history, setCerrar, match, user, setreloadApp }) =>
     }, [history, dataAlumno.activeExam1, setCerrar])
     const classes = useStyles();
     function elegir(numero) {
-        if (numero < 0) {
+        if (numero <= 0) {
             history.goBack();
         }
-        if (numero >= 7) {
+        if (numero >7) {
             history.goBack();
         }
         return <Pregunta1 dtajs={data[parseInt(numero)]} dataAlumno={dataAlumno.alumnExam ? dataAlumno.alumnExam.test : []} posision={numero} />
@@ -48,7 +48,7 @@ const Exam1 = ({ dataAlumno, history, setCerrar, match, user, setreloadApp }) =>
             {elegir(match.params.num)}
             <div className={classes.root}>
                 <Pagination
-                    count={6}
+                    count={7}
                     defaultPage={0}
                     page={parseInt(match.params.num)}
                     color="primary"
