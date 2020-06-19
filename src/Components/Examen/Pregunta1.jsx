@@ -83,7 +83,8 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
                     />
                     <span>{dtajs.respuesta4}</span>
                 </label>
-                <button type="submit">Guardar</button>
+                <br></br>
+                <button className="waves-effect waves-light btn-small #e64a19 deep-orange darken-2" type="submit">Guardar Respuesta</button>
             </form>
         </div>
     )

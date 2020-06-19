@@ -61,14 +61,16 @@ class Modal extends Component {
     }
     render() {
         return (
-            <div>
-                <button
-                    className="waves-effect waves-light btn modal-trigger"
-                    data-target="modal1"
-                >
-                    Terminar Examen
-                 </button>
-
+            <div >
+                <br></br>
+                    <div className="botonTerminar">
+                        <button
+                            className="waves-effect waves-light btn modal-trigger green darken-3 right"
+                            data-target="modal1"
+                        >
+                            Terminar Examen
+                        </button>
+                    </div>
                 <div
                     ref={Modal => {
                         this.Modal = Modal;

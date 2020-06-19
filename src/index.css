@@ -15,4 +15,6 @@ code {
 .card-panel{
   border-radius: 18px !important;
 }
-        
+.botonTerminar{
+  margin-right: 10px;
+}     

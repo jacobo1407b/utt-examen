@@ -11,7 +11,7 @@ const Menu = (props) => {
     }
     return (
         <div>
-            <ul id="ListPreguntas" className="dropdown-content">
+            <ul id="ListaPreguntas" className="dropdown-content">
                 <li><a>one</a></li>
                 <li><a>two</a></li>
                 <li className="divider"></li>
@@ -20,8 +20,8 @@ const Menu = (props) => {
             <nav>
 
                 <div className="nav-wrapper green darken-3">
-                    <a className="dropdown-trigger brand-logo" href="#!" data-target="ListPreguntas">Preguntas<i className="material-icons right">arrow_drop_down</i></a>
-                    <a href="#!" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+                    <a className="dropdown-trigger brand-logo" data-target="ListaPreguntas">Preguntas<i className="material-icons right">arrow_drop_down</i></a>
+                    
                     {cerrar ? (
                         <a href="#!" className="btn-floating btn-large halfway-fab waves-effect waves-light red" onClick={logout} title="cerrar sesión">
                             <i className="material-icons">exit_to_app</i>
