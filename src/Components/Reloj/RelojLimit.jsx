@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../Assets/reloj.css'
 import { updateActiveExamen, updateTimeImpli } from '../../utils/DataBase';
 import { withRouter } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -77,8 +78,14 @@ class RelojLimit extends React.Component {
 
     render() {
         return (
-            <div>
-                {this.state.time.h} h {this.state.time.m} m {this.state.time.s} s
+            <div className="container-fluid right-align">
+                <div className="reloj">
+                        <p className="white-text">
+                        Tiempo Restante {this.state.time.h} :
+                        {this.state.time.m} :                      
+                        {this.state.time.s}  seg
+                        </p>                    
+                </div>
             </div>
         );
     }
