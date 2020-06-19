@@ -51,36 +51,27 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     M.AutoInit();
-  })
-</script>
-<script >
-  $(document).ready(function () {
-       $('.sidenav').sidenav();
-       $('.materialboxed').materialbox();
-       $('.parallax').parallax();
-       $('.tabs').tabs();
-       $('.datepicker').datepicker({
-            disableWeekends:true
-       });
-       $('.modal').modal();
   });
+  /*document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems);
+  });*/
 </script>
-
 <script>
-    (function () {
-      var _z = console;
-      Object.defineProperty(window, "console", {
-        get: function () {
-          if (_z._commandLineAPI) {
-            throw "Sorry, Can't exceute scripts!";
-          }
-          return _z;
-        },
-        set: function (val) {
-          _z = val;
+  (function () {
+    var _z = console;
+    Object.defineProperty(window, "console", {
+      get: function () {
+        if (_z._commandLineAPI) {
+          throw "Sorry, Can't exceute scripts!";
         }
-      });
-    })();
+        return _z;
+      },
+      set: function (val) {
+        _z = val;
+      }
+    });
+  })();
 </script>
 
 </html>

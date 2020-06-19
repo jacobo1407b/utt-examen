@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { updateResExam } from '../../utils/DataBase';
 import Radio from '@material-ui/core/Radio';
-
+import MosZom from 'materialize-css/dist/js/materialize.min.js';
 
 
 const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
@@ -19,7 +19,10 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
         })
         setSelectValue(e.target.value);
     }
-
+    const zoomHandler = () => {
+        var elems = document.querySelectorAll('.materialboxed');
+        MosZom.Materialbox.init(elems[0])
+    }
 
     const handlerSubmit = e => {
         e.preventDefault();
@@ -40,7 +43,7 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
                 <h1>{dtajs.pregunta_txt}</h1>
             ) : null}
             {dtajs.pregunta_url ? (
-                <img className="responsive-img" src={dtajs.pregunta_url} alt="pregunta" width="850px" />
+                <img className="responsive-img materialboxed" src={dtajs.pregunta_url} alt="pregunta" width="850px" onClick={zoomHandler} />
             ) : null}
             <form onSubmit={handlerSubmit}>
                 <label>

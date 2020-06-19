@@ -2,6 +2,7 @@ import React from 'react'
 import firebase from '../../utils/firebase';
 import 'firebase/auth';
 import { withRouter } from 'react-router-dom';
+import Exit from '../Modal/ModalBasic';
 const Menu = (props) => {
     const { cerrar } = props
 
@@ -12,28 +13,28 @@ const Menu = (props) => {
     return (
         <div>
             <ul id="ListaPreguntas" className="dropdown-content">
-                <li><a>one</a></li>
-                <li><a>two</a></li>
+                <li><a href="#!">one</a></li>
+                <li><a href="#!">two</a></li>
                 <li className="divider"></li>
-                <li><a>three</a></li>
+                <li><a href="#!">three</a></li>
             </ul>
             <nav>
 
                 <div className="nav-wrapper green darken-3">
-                    <a className="dropdown-trigger brand-logo" data-target="ListaPreguntas">Preguntas<i className="material-icons right">arrow_drop_down</i></a>
-                    
+                    <a href="#!" className="dropdown-trigger brand-logo" data-target="ListaPreguntas">Preguntas<i className="material-icons right">arrow_drop_down</i></a>
+
+
                     {cerrar ? (
                         <a href="#!" className="btn-floating btn-large halfway-fab waves-effect waves-light red" onClick={logout} title="cerrar sesión">
                             <i className="material-icons">exit_to_app</i>
                         </a>
-                    ) : null}
+                    ) : <Exit exitExam={null} />}
 
                 </div>
             </nav>
             <div>
 
             </div>
-
         </div>
     )
 }

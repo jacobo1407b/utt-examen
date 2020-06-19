@@ -31,7 +31,7 @@ const Exam1 = ({ dataAlumno, history, setCerrar, match, user, setreloadApp }) =>
         if (numero <= 0) {
             history.goBack();
         }
-        if (numero >7) {
+        if (numero > 7) {
             history.goBack();
         }
         return <Pregunta1 dtajs={data[parseInt(numero)]} dataAlumno={dataAlumno.alumnExam ? dataAlumno.alumnExam.test : []} posision={numero} />
@@ -54,7 +54,6 @@ const Exam1 = ({ dataAlumno, history, setCerrar, match, user, setreloadApp }) =>
                     color="primary"
                     onChange={handleChange} />
             </div>
-            <ModalBasic exitExam={exitExam} />
         </div>
     )
 }
