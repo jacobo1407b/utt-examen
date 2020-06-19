@@ -40,14 +40,14 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
                 <h1>{dtajs.pregunta_txt}</h1>
             ) : null}
             {dtajs.pregunta_url ? (
-                <img className="responsive-img" src={dtajs.pregunta_url} alt="pregunta" width="850px"/>
+                <img className="responsive-img" src={dtajs.pregunta_url} alt="pregunta" width="850px" />
             ) : null}
             <form onSubmit={handlerSubmit}>
                 <label>
                     <Radio
-                        checked={selectValue === dtajs.respuesta1}
+                        checked={selectValue === "A"}
                         onChange={handlerElegirRespuesta}
-                        value={dtajs.respuesta1}
+                        value="A"
                         name="radio-button-demo"
                         inputProps={{ 'aria-label': 'A' }}
                     />
@@ -55,9 +55,9 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
                 </label>
                 <label>
                     <Radio
-                        checked={selectValue === dtajs.respuesta2}
+                        checked={selectValue === "B"}
                         onChange={handlerElegirRespuesta}
-                        value={dtajs.respuesta2}
+                        value="B"
                         name="radio-button-demo"
                         inputProps={{ 'aria-label': 'A' }}
                     />
@@ -65,9 +65,9 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
                 </label>
                 <label>
                     <Radio
-                        checked={selectValue === dtajs.respuesta3}
+                        checked={selectValue === "C"}
                         onChange={handlerElegirRespuesta}
-                        value={dtajs.respuesta3}
+                        value="C"
                         name="radio-button-demo"
                         inputProps={{ 'aria-label': 'A' }}
                     />
@@ -75,9 +75,9 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
                 </label>
                 <label>
                     <Radio
-                        checked={selectValue === dtajs.respuesta4}
+                        checked={selectValue === "D"}
                         onChange={handlerElegirRespuesta}
-                        value={dtajs.respuesta4}
+                        value="D"
                         name="radio-button-demo"
                         inputProps={{ 'aria-label': 'A' }}
                     />
