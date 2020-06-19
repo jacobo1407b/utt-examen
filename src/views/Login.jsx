@@ -1,10 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect} from 'react'
+import '../Assets/login.css';
 import firebase from '../utils/firebase';
 import 'firebase/auth';
 import { addStorage } from '../utils/DataBase';
 import M from 'materialize-css';
 
 const Login = () => {
+
+    useEffect(()=>{
+        document.body.style.background="radial-gradient(rgb(255, 255, 255),rgb(87, 87, 87))";
+        return ()=>{
+            document.body.style.background="#ffffff";
+        }
+    },[])
     const [formDta, setFormDta] = useState({ password: "", email: "" });
     const [us, setus] = useState({ user: null })
     const [isloadin, setIsloadin] = useState(false);
@@ -36,7 +44,7 @@ const Login = () => {
         e.preventDefault();
     }
     const Load =
-        (<div className="preloader-wrapper small active">
+        (<div className="preloader-wrapper small active sumitas">
             <div className="spinner-layer spinner-green-only">
                 <div className="circle-clipper left">
                     <div className="circle"></div>
@@ -71,7 +79,10 @@ const Login = () => {
                         </div>
                     </div>
                     {!isloadin ? (
-                        <button className="waves-effect waves-light btn center deep-orange hoverable" type="submit">Login</button>
+                        <button className="waves-effect waves-light btn-large center deep-orange hoverable" type="submit"
+                        style={{	backgroundSize: '200%'
+                        }}
+                        >Login</button>
                     ) : (
                             Load
                         )}
