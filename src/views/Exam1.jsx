@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, Fragment } from 'react'
+import "../Assets/preguntas.css"
 import { withRouter } from 'react-router-dom';
 import data from '../Assets/exam.json'
 import Pregunta1 from '../Components/Examen/Pregunta1';
@@ -6,6 +7,8 @@ import Reloj from '../Components/Reloj/RelojLimit';
 import ModalBasic from '../Components/Modal/ModalBasic';
 import Pagination from '@material-ui/lab/Pagination';
 import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -46,14 +49,22 @@ const Exam1 = ({ dataAlumno, history, setCerrar, match, user, setreloadApp }) =>
         <div>
             <Reloj user={user} setreloadApp={setreloadApp} />
             {elegir(match.params.num)}
+            <Grid container spacing={1}>
+            <Grid item xs={3}>
+               
+            </Grid>
+            <Grid item xs={4}>
             <div className={classes.root}>
-                <Pagination
+                <Pagination className=" transparent center-align"
                     count={7}
-                    defaultPage={0}
+                    defaultPage={1}
                     page={parseInt(match.params.num)}
                     color="primary"
                     onChange={handleChange} />
-            </div>
+            </div>             
+            </Grid>
+            </Grid> 
+            
             <ModalBasic exitExam={exitExam} />
         </div>
     )
