@@ -12,84 +12,46 @@ class Modal extends Component {
             terminar: props.exitExam
         }
     }
-    componentDidMount() {
-        const options = {
-            onOpenStart: () => {
-                console.log("Open Start");
-            },
-            onOpenEnd: () => {
-                console.log("Open End");
-            },
-            onCloseStart: () => {
-                console.log("Close Start");
-            },
-            onCloseEnd: () => {
-                console.log("Close End");
-            },
-            inDuration: 250,
-            outDuration: 250,
-            opacity: 0.5,
-            dismissible: false,
-            startingTop: "4%",
-            endingTop: "10%"
-        };
-        M.Modal.init(this.Modal, options);
-    }
 
-    preguntar() {
+
+    primer() {
         if (localStorage.getItem('time') > 0) {
             Swal.fire({
-                title: '¿Estas seguro?',
-                text: "Tienes tiempo para revisar tu examen",
+                title: '¿Terminar examen?',
+                text: "No podras revertir esto",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Si estoy totalmente seguro!'
+                confirmButtonText: 'Si'
             }).then((result) => {
                 if (result.value) {
-                    // localStorage.setItem('time', 0)
-                    updateActiveExamen(localStorage.getItem('document'), rec)
-                    function rec() {
-                        window.location.reload();
-                        window.location = '/'
-                    }
+                    Swal.fire({
+                        title: '¿Estas seguro?',
+                        text: "Tienes tiempo para revisar tu examen",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Si estoy totalmente seguro!'
+                    }).then((result) => {
+                        if (result.value) {
+                            // localStorage.setItem('time', 0)
+                            updateActiveExamen(localStorage.getItem('document'), rec)
+                            function rec() {
+                                window.location.reload();
+                                window.location = '/'
+                            }
+                        }
+                    })
                 }
             })
         }
-
     }
     render() {
         return (
             <div >
-                <div className="botonTerminar">
-                    <button
-                        className="waves-effect waves-light btn modal-trigger green darken-3 right"
-                        data-target="modal1"
-                    >
-                        Terminar Examen
-                        </button>
-                </div>
-                <div
-                    ref={Modal => {
-                        this.Modal = Modal;
-                    }}
-                    id="modal1"
-                    className="modal"
-                >
-                    <div className="modal-content">
-                        <h4>¿Finalizar examen?</h4>
-                        <p>A bunch of text</p>
-                    </div>
-                    <div className="modal-footer">
-                        <button className="modal-close waves-effect waves-red btn-flat" onClick={this.preguntar}>
-                            Aceptar
-                         </button>
-                        <button className="modal-close waves-effect waves-green btn-flat">
-                            Cancelar
-                        </button>
-                    </div>
-                </div>
+                <button onClick={this.primer}>Cerrar</button>
             </div>
         );
     }
