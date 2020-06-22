@@ -12,27 +12,18 @@ const Menu = (props) => {
     }
     return (
         <div>
-            <ul id="ListaPreguntas" className="dropdown-content">
-                <li><a href="#!">one</a></li>
-                <li><a href="#!">two</a></li>
-                <li className="divider"></li>
-                <li><a href="#!">three</a></li>
-            </ul>
             <nav>
-
-                <div className="nav-wrapper green darken-3">
-
-                    {cerrar ? (
-                        <a href="#!" className="btn-floating btn-large halfway-fab waves-effect waves-light red" onClick={logout} title="cerrar sesión">
-                            <i className="material-icons">exit_to_app</i>
-                        </a>
-                    ) : <Exit exitExam={null} />}
-
+                <div className="nav-wrapper green">
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li>{cerrar ? (
+                            <a href="#!" className="btn-floating btn-large halfway-fab waves-effect waves-light red" onClick={logout} title="cerrar sesión">
+                                <i className="material-icons">exit_to_app</i>
+                            </a>
+                        ) : <Exit exitExam={null} />}
+                        </li>
+                    </ul>
                 </div>
             </nav>
-            <div>
-
-            </div>
         </div>
     )
 }
