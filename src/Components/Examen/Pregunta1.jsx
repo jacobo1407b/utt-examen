@@ -40,7 +40,7 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
     return (
         <div className="container">
             {dtajs.pregunta_txt ? (
-                <h1>{dtajs.pregunta_txt}</h1>
+                <h4>{dtajs.pregunta_txt}</h4>
             ) : null}
             {dtajs.pregunta_url ? (
                 <img className="responsive-img materialboxed" src={dtajs.pregunta_url} alt="pregunta" width="850px" onClick={zoomHandler} />

@@ -12,29 +12,29 @@ const Menu = (props) => {
     }
     return (
         <div>
-            <ul id="ListaPreguntas" className="dropdown-content">
-                <li><a href="#!">one</a></li>
-                <li><a href="#!">two</a></li>
-                <li className="divider"></li>
-                <li><a href="#!">three</a></li>
-            </ul>
             <nav>
+                <div className="nav-wrapper  green darken-3">
+                        <a href="#!" className="brand-logo">SEANI</a>
+                        <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+                        <ul className="right hide-on-med-and-down">
+                            <li>{cerrar ? (
+                                <a href="#!" className="btn-floating btn-large halfway-fab waves-effect waves-light red" onClick={logout} title="cerrar sesión">
+                                    <i className="material-icons">exit_to_app</i>
+                                </a>
+                                ) : <Exit exitExam={null} />}
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
 
-                <div className="nav-wrapper green darken-3">
-                    <a href="#!" className="dropdown-trigger brand-logo" data-target="ListaPreguntas">Preguntas<i className="material-icons right">arrow_drop_down</i></a>
-
-
-                    {cerrar ? (
-                        <a href="#!" className="btn-floating btn-large halfway-fab waves-effect waves-light red" onClick={logout} title="cerrar sesión">
-                            <i className="material-icons">exit_to_app</i>
-                        </a>
-                    ) : <Exit exitExam={null} />}
-
-                </div>
-            </nav>
-            <div>
-
-            </div>
+                <ul className="sidenav" id="mobile-demo">
+                    <li>{cerrar ? (
+                                <a href="#!" className="btn-floating btn-large halfway-fab waves-effect waves-light red" onClick={logout} title="cerrar sesión">
+                                    <i className="material-icons">exit_to_app</i>
+                                </a>
+                                ) : <Exit exitExam={null} />}
+                            </li>
+                </ul>
         </div>
     )
 }

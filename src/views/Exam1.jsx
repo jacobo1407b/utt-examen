@@ -64,8 +64,6 @@ const Exam1 = ({ dataAlumno, history, setCerrar, match, user, setreloadApp }) =>
                     </div>
                 </Grid>
             </Grid>
-
-            <ModalBasic exitExam={exitExam} />
         </div>
     )
 }
