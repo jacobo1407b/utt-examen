@@ -21,8 +21,6 @@ const Menu = (props) => {
             <nav>
 
                 <div className="nav-wrapper green darken-3">
-                    <a href="#!" className="dropdown-trigger brand-logo" data-target="ListaPreguntas">Preguntas<i className="material-icons right">arrow_drop_down</i></a>
-
 
                     {cerrar ? (
                         <a href="#!" className="btn-floating btn-large halfway-fab waves-effect waves-light red" onClick={logout} title="cerrar sesión">
