@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 import data from '../Assets/exam.json'
 import Pregunta1 from '../Components/Examen/Pregunta1';
 import Reloj from '../Components/Reloj/RelojLimit';
-import ModalBasic from '../Components/Modal/ModalBasic';
 import Pagination from '@material-ui/lab/Pagination';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -42,9 +41,7 @@ const Exam1 = ({ dataAlumno, history, setCerrar, match, user, setreloadApp }) =>
     const handleChange = (event, value) => {
         history.push(`/exam1/${value}`)
     };
-    const exitExam = () => {
-        history.push('/')
-    }
+
     return (
         <div>
             <Reloj user={user} setreloadApp={setreloadApp} />
