@@ -9,7 +9,7 @@ const Home = ({ dataAlumno, history }) => {
             toast({ html: 'Este examen esta desactivado' })
             return false
         }
-        document.documentElement.requestFullscreen()
+        //document.documentElement.requestFullscreen()
         history.push('/exam1/1')
     }
 
