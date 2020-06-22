@@ -81,7 +81,7 @@ class RelojLimit extends React.Component {
             <div className="container-fluid right-align">
                 <div className="reloj">
                         <p className="white-text">
-                        Tiempo Restante {this.state.time.h} : 
+                        Tiempo Restante {this.state.time.h} hora :  
                         {this.state.time.m} :                      
                         {this.state.time.s}  seg
                         </p>                    
