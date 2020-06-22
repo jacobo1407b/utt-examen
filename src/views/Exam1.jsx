@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from 'react'
+import React, { useEffect } from 'react'
 import "../Assets/preguntas.css"
 import { withRouter } from 'react-router-dom';
 import data from '../Assets/exam.json'
