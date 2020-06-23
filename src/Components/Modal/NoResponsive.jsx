@@ -4,7 +4,7 @@ import { updateActiveExamen } from '../../utils/DataBase';
 import { withRouter } from 'react-router-dom'
 
 
-class Modal extends Component {
+class NoResponsive extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -50,19 +50,14 @@ class Modal extends Component {
     render() {
         return (
             <div >
-                <a href="#!" onClick={this.primer}><i className="material-icons">assignment_turned_in
-                    </i>Terminar examen</a>
+                <a href="#!" onClick={this.primer}>Terminar Examen</a>
             </div>
         );
     }
 }
 
-
-export default withRouter(Modal);
-
-
+export default withRouter(NoResponsive);
 /***
- *
  *
  *
  */

@@ -53,10 +53,18 @@ class RelojLimit extends React.Component {
 
         // Check if we're at zero.
         if (seconds === 15) {
-            alert('tu examen esta apunto de terminar')
+            Swal.fire({
+                icon: 'warning',
+                title: '¡Alerta!',
+                text: '¡Examen apunto de terminar!',
+            })
         }
         if (seconds === 900) {
-            alert('15 minutos para finalizar')
+            Swal.fire({
+                icon: 'warning',
+                title: '¡Alerta!',
+                text: '15 Minutos para finalizar',
+            })
             updateTimeImpli(900);
         }
         if (seconds === 0 || seconds < 0) {
@@ -78,15 +86,8 @@ class RelojLimit extends React.Component {
 
     render() {
         return (
-            <div className="container-fluid right-align">
-                <div className="reloj">
-                        <p className="white-text">
-                        Tiempo Restante {this.state.time.h} hora :  
-                        {this.state.time.m} :                      
-                        {this.state.time.s}  seg
-                        </p>                    
-                </div>
-            </div>
+
+            <a href="#!" className="brand-logo"><i className="material-icons">alarm</i> {this.state.time.h} h :{this.state.time.m} m : {this.state.time.s} s</a>
         );
     }
 }
