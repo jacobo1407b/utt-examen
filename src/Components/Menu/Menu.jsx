@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import firebase from '../../utils/firebase';
 import 'firebase/auth';
 import { withRouter } from 'react-router-dom';
 import Exit from '../Modal/ModalBasic';
+import NotRes from '../Modal/NoResponsive';
+import M from 'materialize-css/dist/js/materialize.min.js';
+import Reloj from '../Reloj/RelojLimit';
+
 const Menu = (props) => {
     const { cerrar } = props
-
+    useEffect(() => {
+        let sidenav = document.querySelector('#mobile-demo');
+        M.Sidenav.init(sidenav, {});
+    }, [])
     const logout = () => {
         firebase.auth().signOut();
         props.history.push('/')
@@ -14,27 +21,28 @@ const Menu = (props) => {
         <div>
             <nav>
                 <div className="nav-wrapper  green darken-3">
-                        <a href="#!" className="brand-logo">SEANI</a>
-                        <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-                        <ul className="right hide-on-med-and-down">
-                            <li>{cerrar ? (
-                                <a href="#!" className="btn-floating btn-large halfway-fab waves-effect waves-light red" onClick={logout} title="cerrar sesión">
-                                    <i className="material-icons">exit_to_app</i>
-                                </a>
-                                ) : <Exit exitExam={null} />}
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                    <a href="#!" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+                    {
+                        cerrar ? null : (<Reloj />)
+                    }
+                    <ul className="right hide-on-med-and-down">
+                        <li>{cerrar ? (
+                            <a href="#!" className="btn-floating btn-large halfway-fab waves-effect waves-light red" onClick={logout} title="cerrar sesión">
+                                <i className="material-icons">exit_to_app</i>
+                            </a>
+                        ) : <NotRes exitExam={null} />}
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
-                <ul className="sidenav" id="mobile-demo">
-                    <li>{cerrar ? (
-                                <a href="#!" className="btn-floating btn-large halfway-fab waves-effect waves-light red" onClick={logout} title="cerrar sesión">
-                                    <i className="material-icons">exit_to_app</i>
-                                </a>
-                                ) : <Exit exitExam={null} />}
-                            </li>
-                </ul>
+            <ul className="sidenav" id="mobile-demo">
+                <li>{cerrar ? (
+                    <a href="#!" onClick={logout}><i className="material-icons">exit_to_app
+                    </i>Cerrar sesion</a>
+                ) : <Exit exitExam={null} />}
+                </li>
+            </ul>
         </div>
     )
 }

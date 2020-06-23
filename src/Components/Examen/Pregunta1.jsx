@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { updateResExam } from '../../utils/DataBase';
 import Radio from '@material-ui/core/Radio';
-import MosZom from 'materialize-css/dist/js/materialize.min.js';
+//import MosZom from 'materialize-css/dist/js/materialize.min.js';
+import FormControl from '@material-ui/core/FormControl';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Button from '@material-ui/core/Button';
+import SaveIcon from '@material-ui/icons/Save';
+import Swal from 'sweetalert2';
+
 
 
 const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
@@ -16,19 +23,23 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
         setTempResp({
             pregunta: dtajs._id,
             respuesta: e.target.value
-        })
+        });
         setSelectValue(e.target.value);
     }
-    const zoomHandler = () => {
+    /*const zoomHandler = () => {
         var elems = document.querySelectorAll('.materialboxed');
         MosZom.Materialbox.init(elems[0])
-    }
+    }*/
 
     const handlerSubmit = e => {
         e.preventDefault();
 
         if (!tempResp.pregunta || !tempResp.pregunta) {
-            alert('Ingresa un valor')
+            Swal.fire({
+                icon: 'warning',
+                title: '¡Alerta!',
+                text: 'Ingrese un nuevo valor',
+            })
             return false;
         } else {
             dataAlumno[conver] = tempResp;
@@ -43,20 +54,79 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
                 <h4>{dtajs.pregunta_txt}</h4>
             ) : null}
             {dtajs.pregunta_url ? (
-                <img className="responsive-img materialboxed" src={dtajs.pregunta_url} alt="pregunta" width="850px" onClick={zoomHandler} />
+                <img
+                    className="responsive-img materialboxed"
+                    src={dtajs.pregunta_url}
+                    alt="pregunta"
+                    width="900px"
+                    height="550px"
+                // onClick={zoomHandler}
+                />
             ) : null}
             <form onSubmit={handlerSubmit}>
-                <label>
-                    <Radio
+                <FormControl component="fieldset">
+                    <RadioGroup
+                        //defaultValue={selectValue}
+                        aria-label="gender"
+                        name="customized-radios"
+                    >
+                        <FormControlLabel
+                            value="A"
+                            control={<Radio />}
+                            label={dtajs.respuesta1}
+                            onChange={handlerElegirRespuesta}
+                            checked={selectValue === "A"}
+                        />
+                        <FormControlLabel
+                            value="B"
+                            control={<Radio />}
+                            label={dtajs.respuesta2}
+                            onChange={handlerElegirRespuesta}
+                            checked={selectValue === "B"}
+                        />
+                        <FormControlLabel
+                            value="C"
+                            control={<Radio />}
+                            label={dtajs.respuesta3}
+                            onChange={handlerElegirRespuesta}
+                            checked={selectValue === "C"}
+                        />
+                        <FormControlLabel
+                            value="D"
+                            control={<Radio />}
+                            label={dtajs.respuesta4}
+                            onChange={handlerElegirRespuesta}
+                            checked={selectValue === "D"}
+                        />
+                    </RadioGroup>
+                    <Button
+                        type="submit"
+                        variant="contained"
+                        color="primary"
+                        size="large"
+                        startIcon={<SaveIcon />}
+                    >
+                        Guardar Respuesta
+                </Button>
+                </FormControl>
+            </form>
+        </div>
+    )
+}
+
+export default Pregunta1
+/**
+ *
+ *
+ * <Radio
                         checked={selectValue === "A"}
                         onChange={handlerElegirRespuesta}
                         value="A"
                         name="radio-button-demo"
                         inputProps={{ 'aria-label': 'A' }}
                     />
-                    <span>{dtajs.respuesta1}</span>
-                </label>
-                <label>
+                    <h3>{dtajs.respuesta1}</h3>
+
                     <Radio
                         checked={selectValue === "B"}
                         onChange={handlerElegirRespuesta}
@@ -65,8 +135,6 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
                         inputProps={{ 'aria-label': 'A' }}
                     />
                     <span>{dtajs.respuesta2}</span>
-                </label>
-                <label>
                     <Radio
                         checked={selectValue === "C"}
                         onChange={handlerElegirRespuesta}
@@ -75,8 +143,7 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
                         inputProps={{ 'aria-label': 'A' }}
                     />
                     <span>{dtajs.respuesta3}</span>
-                </label>
-                <label>
+
                     <Radio
                         checked={selectValue === "D"}
                         onChange={handlerElegirRespuesta}
@@ -85,12 +152,4 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
                         inputProps={{ 'aria-label': 'A' }}
                     />
                     <span>{dtajs.respuesta4}</span>
-                </label>
-                <br></br>
-                <button className="waves-effect waves-light btn-small #e64a19 deep-orange darken-2" type="submit">Guardar Respuesta</button>
-            </form>
-        </div>
-    )
-}
-
-export default Pregunta1
+ */
