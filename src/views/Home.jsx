@@ -24,8 +24,9 @@ const Home = ({ dataAlumno, history }) => {
                 audio: true
             },
             function (localMediaStream) {
-                var video = document.querySelector(video);
-                video.src = window.URL.createObjectURL(localMediaStream);
+                // var video = document.querySelector(video);
+                //video.src = window.URL.createObjectURL(localMediaStream);
+                console.log('Chido XD')
             },
             function (err) {
                 console.log("Ocurrió el siguiente error: " + err);

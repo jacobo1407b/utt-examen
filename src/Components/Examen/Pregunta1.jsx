@@ -7,9 +7,6 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
-import Swal from 'sweetalert2';
-
-
 
 const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
     let conver = parseInt(posision);
