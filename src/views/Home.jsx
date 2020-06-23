@@ -24,6 +24,7 @@ const Home = ({ dataAlumno, history }) => {
                 audio: true
             },
             function (localMediaStream) {
+
                 // var video = document.querySelector(video);
                 //video.src = window.URL.createObjectURL(localMediaStream);
                 console.log('Chido XD')
@@ -61,62 +62,62 @@ const TextIng = () => {
         <p>
             <h3>Bienvenido, Nombre de usuario</h3>
             <h4>Instrucciones Generales</h4>
-                <p className="flow-text">
-                    <blockquote> 
-                        La evaluación que estas a punto de responder consta de 90 preguntas que se deben de responder en un tiempo de 2 horas el examen  corresponde a las siguientes áreas: 
+            <p className="flow-text">
+                <blockquote>
+                    La evaluación que estas a punto de responder consta de 90 preguntas que se deben de responder en un tiempo de 2 horas el examen  corresponde a las siguientes áreas:
                     </blockquote>
-                    <div className="card-panel">
-                        
-                        <span className="blue-text text-darken-2">
-                            <p>
-                                Lógico / matemática
+                <div className="card-panel">
+
+                    <span className="blue-text text-darken-2">
+                        <p>
+                            Lógico / matemática
                             </p>
-                        </span>
-                        <span className="blue-text text-darken-2">
-                            <p>
-                                Comprensión lectora
+                    </span>
+                    <span className="blue-text text-darken-2">
+                        <p>
+                            Comprensión lectora
                             </p>
-                        </span> 
-                    </div>
-                    <blockquote>
-                        Todas las preguntas son de opción Múltiple: Al seleccionar la Respuesta, Usted tendrá que dar click en el botón Guardar respuesta como se muestra en la siguiente Imagen.
+                    </span>
+                </div>
+                <blockquote>
+                    Todas las preguntas son de opción Múltiple: Al seleccionar la Respuesta, Usted tendrá que dar click en el botón Guardar respuesta como se muestra en la siguiente Imagen.
                     </blockquote>
 
-                    
-                    <div className="card-panel">
+
+                <div className="card-panel">
                     En caso de que te encuentres en estas situaciones.
 
                         <span className="red-text text-darken-2">
-                            <p>
-                                La conexión a internet es mala.
+                        <p>
+                            La conexión a internet es mala.
                             </p>
-                        </span>
-                        <span className="red-text text-darken-2">
-                            <p>
-                                Cerrar la pestaña por error.
+                    </span>
+                    <span className="red-text text-darken-2">
+                        <p>
+                            Cerrar la pestaña por error.
                             </p>
-                        </span> 
-                        <span className="red-text text-darken-2">
-                            <p>
-                                Se termine la batería a tu celular.
+                    </span>
+                    <span className="red-text text-darken-2">
+                        <p>
+                            Se termine la batería a tu celular.
                             </p>
-                        </span> 
-                        <span className="red-text text-darken-2">
-                            <p>
-                                Se vaya la luz.
+                    </span>
+                    <span className="red-text text-darken-2">
+                        <p>
+                            Se vaya la luz.
                             </p>
-                        </span> 
-                        <span className="red-text text-darken-2">
-                            <p>
-                                Se apague tu dispositivo.
+                    </span>
+                    <span className="red-text text-darken-2">
+                        <p>
+                            Se apague tu dispositivo.
                             </p>
-                        </span> 
-                    </div>
-                    <blockquote>
-                        El sistema guardara las respuestas y el tiempo también, así que mantén la calma en caso de cualquier duda sobre alguna situación puedes comunicarte al Grupo de <a href="https://t.me/utt_seani_2020" target="_blank">telegram.</a>
-                        
-                    </blockquote>
-                </p>
+                    </span>
+                </div>
+                <blockquote>
+                    El sistema guardara las respuestas y el tiempo también, así que mantén la calma en caso de cualquier duda sobre alguna situación puedes comunicarte al Grupo de <a href="https://t.me/utt_seani_2020" target="_blank">telegram.</a>
+
+                </blockquote>
+            </p>
         </p>
     )
 }
