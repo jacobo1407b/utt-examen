@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom'
 import { toast } from 'materialize-css';
 const Home = ({ dataAlumno, history }) => {
 
-
     const handlerExam1 = () => {
         if (!dataAlumno.activeExam1) {
             toast({ html: 'Este examen esta desactivado' })
@@ -40,7 +39,7 @@ const Home = ({ dataAlumno, history }) => {
             {
                 dataAlumno.activeExam1 ?
                     (
-                        <TextIng />
+                        <TextIng dataAlumno = {dataAlumno}/>
                     ) :
                     (
                         <TextNoActive />
@@ -56,10 +55,11 @@ const Home = ({ dataAlumno, history }) => {
 }
 
 
-const TextIng = () => {
+const TextIng = (props) => {
+    const {dataAlumno}=props
     return (
         <p>
-            <h3>Bienvenido, Nombre de usuario</h3>
+            <h3>BIENVENIDO {"(A)"}, {dataAlumno.username}</h3>
             <h4>Instrucciones Generales</h4>
                 <p className="flow-text">
                     <blockquote> 
