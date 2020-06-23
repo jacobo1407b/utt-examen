@@ -114,7 +114,7 @@ const TextIng = () => {
                     </span>
                 </div>
                 <blockquote>
-                    El sistema guardara las respuestas y el tiempo también, así que mantén la calma en caso de cualquier duda sobre alguna situación puedes comunicarte al Grupo de <a href="https://t.me/utt_seani_2020" target="_blank">telegram.</a>
+                    El sistema guardara las respuestas y el tiempo también, así que mantén la calma en caso de cualquier duda sobre alguna situación puedes comunicarte al Grupo de <a href="https://t.me/utt_seani_2020" rel="noopener noreferrer" target="_blank">telegram.</a>
 
                 </blockquote>
             </p>
