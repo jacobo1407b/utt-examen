@@ -35,11 +35,6 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
         e.preventDefault();
 
         if (!tempResp.pregunta || !tempResp.pregunta) {
-            Swal.fire({
-                icon: 'warning',
-                title: '¡Alerta!',
-                text: 'Ingrese un nuevo valor',
-            })
             return false;
         } else {
             dataAlumno[conver] = tempResp;
