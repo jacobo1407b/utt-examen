@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import { toast } from 'materialize-css';
 const Home = ({ dataAlumno, history }) => {
@@ -13,6 +13,7 @@ const Home = ({ dataAlumno, history }) => {
     }
 
     useEffect(() => {
+        
         navigator.getUserMedia = (navigator.getUserMedia ||
             navigator.webkitGetUserMedia ||
             navigator.mozGetUserMedia ||
@@ -35,21 +36,24 @@ const Home = ({ dataAlumno, history }) => {
     return (
         <div className="container center">
             <br></br>
-            <img className="responsive-img center" src="utt.png" alt="utt-img" width="250px" />
             {
                 dataAlumno.activeExam1 ?
-                    (
+                    ( <Fragment>
+                        <img className="responsive-img center" src="utt.png" alt="utt-img" width="250px" />
+
                         <TextIng dataAlumno = {dataAlumno}/>
+                        <div className="container">
+                        <br></br><br></br><br></br><br></br>
+                        <button className="waves-effect waves-light btn-large deep-orange darken-2 container" onClick={handlerExam1}>REALIZAR PRUEBA</button>
+                        <br></br><br></br><br></br><br></br><br></br><br></br>
+                    </div>
+                    </Fragment>
                     ) :
                     (
-                        <TextNoActive />
+                        <TextNoActive dataAlumno = {dataAlumno}/>
                     )
             }
-            <div className="container">
-                <br></br>
-                <button className="waves-effect waves-light btn-large deep-orange darken-2 container" onClick={handlerExam1}>REALIZAR PRUEBA</button>
-                <br></br>
-            </div>
+ 
         </div>
     )
 }
@@ -69,7 +73,7 @@ const TextIng = (props) => {
                         
                         <span className="blue-text text-darken-2">
                             <p>
-                                Lógico / matemática
+                                Lógico / matemáticas
                             </p>
                         </span>
                         <span className="blue-text text-darken-2">
@@ -79,12 +83,25 @@ const TextIng = (props) => {
                         </span> 
                     </div>
                     <blockquote>
-                        Todas las preguntas son de opción Múltiple: Al seleccionar la Respuesta, Usted tendrá que dar click en el botón Guardar respuesta como se muestra en la siguiente Imagen.
-                    </blockquote>
-
-                    
+                    Por favor habilite los permisos necesarios en tu navegador como se muestra a continuación.
                     <div className="card-panel">
-                    En caso de que te encuentres en estas situaciones.
+                        <video className="responsive-video" controls={false} autoPlay loop preload="auto">
+                            <source src="/camara-micro.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                    </blockquote>
+                    
+                    <blockquote>
+                    Todas las preguntas son de opción Múltiple: Al seleccionar la Respuesta,  tendrá que dar clic en el botón "Guardar respuesta" como se muestra a continuación.
+                        <div className="card-panel">
+                            <video className="responsive-video" controls={false} autoPlay loop preload="auto">
+                            <source src="/qwerty.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                    </blockquote>
+                   
+                    <div className="card-panel">
+                    En caso de que te encuentres en estas situaciones:
 
                         <span className="red-text text-darken-2">
                             <p>
@@ -121,12 +138,25 @@ const TextIng = (props) => {
     )
 }
 
-const TextNoActive = () => {
+const TextNoActive = (props) => {
+    const {dataAlumno}=props
+
     return (
         <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio soluta reiciendis dicta cum tempore repellendus modi cumque veritatis nemo ex molestias veniam quisquam impedit at, nihil vitae perspiciatis aliquid numquam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque itaque soluta et repudiandae ad. Ducimus, id. Saepe deserunt sequi, ducimus deleniti fuga neque vero fugit. Assumenda natus laboriosam quis ducimus?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium aliquid quisquam illum, aspernatur nihil ut similique voluptatem eligendi aperiam optio. Unde eum officiis repudiandae perspiciatis ut nulla perferendis ad aspernatur.
+            <h1>​ ¡Felicidades!</h1>
+            <h4>{dataAlumno.username}</h4>
+            <img src="/guerrero.png" alt="lucas alias la botarga"/>
+            <br></br><br></br><br></br><br></br><br></br>
+            <blockquote>
+            <div className="card-panel">
+                <span className="flow-text">Haz concluido tu examen de admisión. 
+                    Espera resultados en la pagina oficial de la Universidad Tecnológica de Tlaxcala.
+                </span>
+            </div>
+            </blockquote>
+            
+
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
         </p>
     )
 }

@@ -79,7 +79,7 @@ const Login = () => {
                         </div>
                     </div>
                     {!isloadin ? (
-                        <button className="waves-effect waves-light btn-large center deep-orange hoverable" type="submit"
+                        <button className="btn-large center deep-orange hoverable" type="submit"
                         style={{	backgroundSize: '200%'
                         }}
                         >Login</button>
