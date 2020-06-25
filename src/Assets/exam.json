@@ -19,7 +19,7 @@
     },
     {
         "_id": "67",
-        "pregunta_txt": "¿Cuál es el anexo que enlaza las oraciones?↵En los ensayos de Octavio Paz nos encontramos ante una variedad impresionante de temas sobresaliendo los de asunto antropológicos, en particular en lo referente al mexicano, como lo testigua su obra clásica El laberinto de soledad. ______ también abunda, especialmente en su poesía, los temas del amor, del erotismo, de la poesía, de lo religioso y de la metafísica del ser.",
+        "pregunta_txt": "¿Cuál es el nexo que enlaza las oraciones?↵En los ensayos de Octavio Paz nos encontramos ante una variedad impresionante de temas sobresaliendo los de asunto antropológicos, en particular en lo referente al mexicano, como lo testigua su obra clásica El laberinto de soledad. ______ también abunda, especialmente en su poesía, los temas del amor, del erotismo, de la poesía, de lo religioso y de la metafísica del ser.",
         "pregunta_url": "",
         "respuesta1": "Y",
         "respuesta2": "Entonces",
@@ -64,7 +64,7 @@
     },
     {
         "_id": "26",
-        "pregunta_txt": "Elija las letras del código que completen la frase: la ociosidad es la madre de todos los vicios.↵Yn cpvcgvqñq rg yñ znqfr qr hcqcg ycg",
+        "pregunta_txt": "Elija las letras del código que completen la frase: la ociosidad es la madre de todos los vicios.↵Yn cpvcgvqñq rg yñ znqfr qr hcqcg ycg...",
         "pregunta_url": "",
         "respuesta1": "iuoubf",
         "respuesta2": "kwqvdh",
@@ -73,7 +73,7 @@
     },
     {
         "_id": "61",
-        "pregunta_txt": "Seleccione la opción que contiene un error ortográfico de los térrminos.",
+        "pregunta_txt": "Seleccione la opción que contiene un error ortográfico de los términos.",
         "pregunta_url": "",
         "respuesta1": "Grave - grave",
         "respuesta2": "Sabe - save",
@@ -83,7 +83,7 @@
     {
         "_id": "78",
         "pregunta_txt": " ",
-        "pregunta_url": "https://firebasestorage.googleapis.com/v0/b/seani-954ac.appspot.com/o/imgPreguntas%2F75%20-%202.jpg?alt=media&token=a688ae37-bb1e-4fbb-b784-38a67ff96bce",
+        "pregunta_url": "https://firebasestorage.googleapis.com/v0/b/seani-954ac.appspot.com/o/imgPreguntas%2F78%20-%204.jpg?alt=media&token=79d08ecc-594f-4928-a48c-2c71e101be4d",
         "respuesta1": "Menciona el peligro en que está el hábitat de los felinos",
         "respuesta2": "Describe la desmedida caza ilegal de leones y tigres",
         "respuesta3": "Compara la población mundial de los felinos más grandes",
@@ -101,6 +101,7 @@
     {
         "_id": "52",
         "pregunta_txt": " ",
+        "pregunta_url": "https://firebasestorage.googleapis.com/v0/b/seani-954ac.appspot.com/o/imgPreguntas%2F52%20-%201.jpg?alt=media&token=21da2364-46a0-4e58-a5fc-77eafbe59d00",
         "respuesta1": "Cuando se interrumpen el sentido del discurso con un inciso aleatorio",
         "respuesta2": "Cuando se quiere intercalar algún dato preciso",
         "respuesta3": "Para destacar y enfatizar una expresión alternando su significado real",
@@ -109,7 +110,7 @@
     {
         "_id": "88",
         "pregunta_txt": "  ",
-        "pregunta_url": "https://firebasestorage.googleapis.com/v0/b/seani-…=media&token=9685afdb-ec0c-4c58-aa8d-c660216cd5d9",
+        "pregunta_url": "https://firebasestorage.googleapis.com/v0/b/seani-954ac.appspot.com/o/imgPreguntas%2F88%20-%203.jpg?alt=media&token=9685afdb-ec0c-4c58-aa8d-c660216cd5d9",
         "respuesta1": "Saber de antemano lo que se piensa de uno",
         "respuesta2": "No preguntar por la opinión que de uno se tiene",
         "respuesta3": "Evitar el envanecimiento personal para evitar desilusiones",
@@ -137,10 +138,10 @@
         "_id": "57",
         "pregunta_txt": "Elija el par de oraciones que tengan palabras homónimas.",
         "pregunta_url": "",
-        "respuesta1": "El jefe es muy terco y no admite su error; un hombre necio jamas escucha razones",
+        "respuesta1": "El jefe es muy terco y no admite su error; un hombre necio jamás escucha razones",
         "respuesta2": "En competencias, mi hijo nada muy lejos; sé que nada será igual desde este momento",
         "respuesta3": "La planta absorbe sustancias minerales del suelo; El carbón activo absorbe las sustancias tóxicas",
-        "respuesta4": "Una vaca puede dar hasta 20 L. de leche diarios; el toro bravo se origina de la Península Iberica"
+        "respuesta4": "Una vaca puede dar hasta 20 L. de leche diarios; el toro bravo es originario de la Península Iberica"
     },
     {
         "_id": "13",
@@ -191,10 +192,10 @@
         "_id": "43",
         "pregunta_txt": " ",
         "pregunta_url": "https://firebasestorage.googleapis.com/v0/b/seani-954ac.appspot.com/o/imgPreguntas%2F43%20-%203.jpg?alt=media&token=c83ce91b-eab8-4b0b-90fd-74d93800ab91",
-        "respuesta1": "36 48 cm^2",
-        "respuesta2": "72 48 cm^2",
-        "respuesta3": "144 48 cm^2",
-        "respuesta4": "216 48 cm^2"
+        "respuesta1": "36 cm^3",
+        "respuesta2": "72 cm^3",
+        "respuesta3": "144 cm^3",
+        "respuesta4": "216 cm^3"
     },
     {
         "_id": "37",
@@ -206,9 +207,9 @@
         "respuesta4": "48"
     },
     {
-        "_id": "56",
+        "_id": "55",
         "pregunta_txt": " ",
-        "pregunta_url": "https://firebasestorage.googleapis.com/v0/b/seani-954ac.appspot.com/o/imgPreguntas%2F56%20-%202.jpg?alt=media&token=77b3a34a-c7d7-4198-aff0-d02e9770641b",
+        "pregunta_url": "https://firebasestorage.googleapis.com/v0/b/seani-954ac.appspot.com/o/imgPreguntas%2F55%20-%202.jpg?alt=media&token=11a7e672-673f-433c-a016-dff20307e8be",
         "respuesta1": "con - por - antes de",
         "respuesta2": "por - de - hasta",
         "respuesta3": "con - de - hasta",
@@ -238,7 +239,7 @@
         "pregunta_url": "https://firebasestorage.googleapis.com/v0/b/seani-954ac.appspot.com/o/imgPreguntas%2F11%20-%203%20copia.jpg?alt=media&token=c2bda8e7-174b-4536-8997-d0ade0e099af",
         "respuesta1": "(-4x + 5) (-4x - 3)",
         "respuesta2": "(-4x - 5) (4x - 3)",
-        "respuesta3": "(-4x + 5) (4x + 3)",
+        "respuesta3": "(4x + 5) (4x + 3)",
         "respuesta4": "(4x - 5) (4x - 3)"
     },
     {
@@ -311,7 +312,7 @@
         "respuesta1": "Modesto",
         "respuesta2": "Fastidioso",
         "respuesta3": "Imponente",
-        "respuesta4": "Esplémdido"
+        "respuesta4": "Espléndido"
     },
     {
         "_id": "71",
@@ -324,7 +325,7 @@
     },
     {
         "_id": "18",
-        "pregunta_txt": "E una caja se encuentran 25 tarjetas de memoria. Si 2 tarjetas están dañadas, ¿Cuál es la probabilidad de sacar una tarjeta defectuosa?",
+        "pregunta_txt": "En una caja se encuentran 25 tarjetas de memoria. Si 2 tarjetas están dañadas, ¿Cuál es la probabilidad de sacar una tarjeta defectuosa?",
         "pregunta_url": "",
         "respuesta1": "1/2",
         "respuesta2": "2/23",
@@ -371,7 +372,7 @@
         "_id": "46",
         "pregunta_txt": " ",
         "pregunta_url": "https://firebasestorage.googleapis.com/v0/b/seani-954ac.appspot.com/o/imgPreguntas%2F46%20-%203.jpg?alt=media&token=763aa3d5-2adf-4e11-908f-4cc3806b6126",
-        "respuesta1": "Copretérico",
+        "respuesta1": "Copretérito",
         "respuesta2": "Presente",
         "respuesta3": "Pospretérito",
         "respuesta4": "Futuro"
@@ -661,7 +662,7 @@
         "pregunta_url": "https://firebasestorage.googleapis.com/v0/b/seani-954ac.appspot.com/o/imgPreguntas%2F69%20-%201.jpg?alt=media&token=2f5740ca-62a8-4b8e-8b9d-994377574e9b",
         "respuesta1": "Colaborar",
         "respuesta2": "Anunciar",
-        "respuesta3": "Desenderse",
+        "respuesta3": "Desentenderse",
         "respuesta4": "Inhibirse"
     },
     {
@@ -756,7 +757,7 @@
     },
     {
         "_id": "75",
-        "pregunta_txt": " ↵",
+        "pregunta_txt": " ",
         "pregunta_url": "https://firebasestorage.googleapis.com/v0/b/seani-954ac.appspot.com/o/imgPreguntas%2F75%20-%202.jpg?alt=media&token=9bd5ca38-5361-49c6-aff0-f605e9269ac4",
         "respuesta1": "La legislación no es clara en el tratamiento",
         "respuesta2": "No existe una legislación que regule su uso",
@@ -765,8 +766,8 @@
     },
     {
         "_id": "33",
-        "pregunta_txt": "¿Cuál número rompe con el patrón de la serie?",
-        "pregunta_url": "",
+        "pregunta_txt": " ",
+        "pregunta_url": "https://firebasestorage.googleapis.com/v0/b/seani-954ac.appspot.com/o/imgPreguntas%2F33%20-%201.jpg?alt=media&token=e1ca5a42-1c86-4279-b6a6-84f134e602ee",
         "respuesta1": "-100",
         "respuesta2": "100",
         "respuesta3": "500",
