@@ -67,13 +67,13 @@ const TextIng = (props) => {
             <h4>Instrucciones Generales</h4>
                 <p className="flow-text">
                     <blockquote> 
-                        La evaluación que estas a punto de responder consta de 90 preguntas que se deben de responder en un tiempo de 2 horas el examen  corresponde a las siguientes áreas: 
+                    La evaluación, que estas a punto de iniciar, consta de 90 preguntas que deberás responder en un tiempo máximo de 2 horas, mismas que corresponden a las siguientes áreas: 
                     </blockquote>
                     <div className="card-panel">
                         
                         <span className="blue-text text-darken-2">
                             <p>
-                                Lógico / matemáticas
+                                Lógico / Matemáticas
                             </p>
                         </span>
                         <span className="blue-text text-darken-2">
@@ -83,7 +83,7 @@ const TextIng = (props) => {
                         </span> 
                     </div>
                     <blockquote>
-                    Por favor habilite los permisos necesarios en tu navegador como se muestra a continuación.
+                    Por favor, habilita los permisos necesarios en tu navegador como se muestra a continuación:
                     <div className="card-panel">
                         <video className="responsive-video" controls={false} autoPlay loop preload="auto">
                             <source src="/camara-micro.mp4" type="video/mp4"/>
@@ -92,7 +92,7 @@ const TextIng = (props) => {
                     </blockquote>
                     
                     <blockquote>
-                    Todas las preguntas son de opción Múltiple: Al seleccionar la Respuesta,  tendrá que dar clic en el botón "Guardar respuesta" como se muestra a continuación.
+                    Todas las preguntas son de opción múltiple, no olvides que, al seleccionar la respuesta, tendrás que dar clic en el botón "Guardar respuesta", como se muestra a continuación.
                         <div className="card-panel">
                             <video className="responsive-video" controls={false} autoPlay loop preload="auto">
                             <source src="/qwerty.mp4" type="video/mp4"/>
@@ -105,7 +105,7 @@ const TextIng = (props) => {
 
                         <span className="red-text text-darken-2">
                             <p>
-                                La conexión a internet es mala.
+                                Conexión a internet muy inestable.
                             </p>
                         </span>
                         <span className="red-text text-darken-2">
@@ -120,7 +120,7 @@ const TextIng = (props) => {
                         </span> 
                         <span className="red-text text-darken-2">
                             <p>
-                                Se vaya la luz.
+                                Se interrumpa la energía eléctrica.
                             </p>
                         </span> 
                         <span className="red-text text-darken-2">
@@ -130,7 +130,7 @@ const TextIng = (props) => {
                         </span> 
                     </div>
                     <blockquote>
-                        El sistema guardara las respuestas y el tiempo también, así que mantén la calma en caso de cualquier duda sobre alguna situación puedes comunicarte al Grupo de <a href="https://t.me/utt_seani_2020" target="_blank">telegram.</a>
+                    El sistema guardará las respuestas y el tiempo también, así que mantén la calma, en caso de cualquier duda sobre alguna situación puedes comunicarte al Grupo de <a href="https://t.me/utt_seani_2020" target="_blank">Telegram.</a>
                         
                     </blockquote>
                 </p>
