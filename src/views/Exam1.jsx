@@ -54,7 +54,8 @@ const Exam1 = ({ dataAlumno, history, setCerrar, match, user, setreloadApp }) =>
                     defaultPage={1}
                     page={parseInt(match.params.num)}
                     color="primary"
-                    onChange={handleChange} />
+                    onChange={handleChange}
+                />
             </div>
         </div>
     )
