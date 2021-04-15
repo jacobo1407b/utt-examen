@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import "../Assets/preguntas.css";
 import { withRouter } from "react-router-dom";
-import data from "../Assets/Examen_PensaAnlitico.json";
-import Pregunta1 from "../Components/Examen/Pregunta1";
+import data from "../Assets/exam_EstrucLengua.json";
+import Languaje from "../Components/Examen/Lengua";
 import Pagination from "@material-ui/lab/Pagination";
 import { makeStyles } from "@material-ui/core/styles";
+import { Container } from "semantic-ui-react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,25 +14,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Exam1 = ({
-  dataAlumno,
-  history,
-  setCerrar,
-  match,
-  user,
-  setreloadApp,
-  setExamen,
-}) => {
+const Lengua = (props) => {
+  const { dataAlumno, history, setCerrar, match, setExamen } = props;
   useEffect(() => {
-    setExamen("exam");
+    setExamen("lengua");
     setCerrar(false);
-    if (!dataAlumno.activeExam1) {
+    if (!dataAlumno.activeLengua) {
       history.push("/");
     }
     return () => {
       setCerrar(true);
     };
-  }, [history, dataAlumno.activeExam1, setCerrar, setExamen]);
+  }, [history, dataAlumno.activeLengua, setCerrar, setExamen]);
+
   const classes = useStyles();
   function elegir(numero) {
     if (numero <= 0) {
@@ -42,19 +36,21 @@ const Exam1 = ({
       history.goBack();
     }
     return (
-      <Pregunta1
+      <Languaje
         dtajs={data[parseInt(numero)]}
-        dataAlumno={dataAlumno.test ? dataAlumno.test : []}
+        dataAlumno={dataAlumno.lengua ? dataAlumno.lengua : []}
         todos={dataAlumno}
         posision={numero}
       />
     );
   }
+
   const handleChange = (event, value) => {
-    history.push(`/exam1/${value}`);
+    history.push(`/lengua/${value}`);
   };
+
   return (
-    <div>
+    <Container>
       {elegir(match.params.num)}
       <div className={classes.root}>
         <Pagination
@@ -66,8 +62,8 @@ const Exam1 = ({
           onChange={handleChange}
         />
       </div>
-    </div>
+    </Container>
   );
 };
 
-export default withRouter(Exam1);
+export default withRouter(Lengua);

@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { updateResExam } from "../../utils/DataBase";
-import Radio from "@material-ui/core/Radio";
-//import MosZom from 'materialize-css/dist/js/materialize.min.js';
 import FormControl from "@material-ui/core/FormControl";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Button from "@material-ui/core/Button";
 import SaveIcon from "@material-ui/icons/Save";
+import { updateLengua } from "../../utils/DataBase";
+import Radio from "@material-ui/core/Radio";
 
-const Pregunta1 = ({ dtajs, dataAlumno, posision, todos }) => {
+const Lengua = ({ dtajs, dataAlumno, posision, todos }) => {
   let conver = parseInt(posision);
   let valorActive = dataAlumno[conver] ? dataAlumno[conver] : "";
   const [tempResp, setTempResp] = useState({});
@@ -16,6 +15,7 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision, todos }) => {
   useEffect(() => {
     setSelectValue(valorActive.respuesta);
   }, [valorActive.respuesta]);
+
   const handlerElegirRespuesta = (e) => {
     setTempResp({
       pregunta: dtajs._id,
@@ -23,11 +23,6 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision, todos }) => {
     });
     setSelectValue(e.target.value);
   };
-  /*const zoomHandler = () => {
-        var elems = document.querySelectorAll('.materialboxed');
-        MosZom.Materialbox.init(elems[0])
-    }*/
-
   const handlerSubmit = (e) => {
     e.preventDefault();
 
@@ -35,10 +30,11 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision, todos }) => {
       return false;
     } else {
       dataAlumno[conver] = tempResp;
-      updateResExam(localStorage.getItem("document"), dataAlumno);
+      updateLengua(localStorage.getItem("document"), dataAlumno);
       setTempResp({});
     }
   };
+
   return (
     <div className="container">
       {dtajs.pregunta_txt ? <h1>{dtajs.pregunta_txt}</h1> : null}
@@ -103,42 +99,4 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision, todos }) => {
   );
 };
 
-export default Pregunta1;
-/**
- *
- *
- * <Radio
-                        checked={selectValue === "A"}
-                        onChange={handlerElegirRespuesta}
-                        value="A"
-                        name="radio-button-demo"
-                        inputProps={{ 'aria-label': 'A' }}
-                    />
-                    <h3>{dtajs.respuesta1}</h3>
-
-                    <Radio
-                        checked={selectValue === "B"}
-                        onChange={handlerElegirRespuesta}
-                        value="B"
-                        name="radio-button-demo"
-                        inputProps={{ 'aria-label': 'A' }}
-                    />
-                    <span>{dtajs.respuesta2}</span>
-                    <Radio
-                        checked={selectValue === "C"}
-                        onChange={handlerElegirRespuesta}
-                        value="C"
-                        name="radio-button-demo"
-                        inputProps={{ 'aria-label': 'A' }}
-                    />
-                    <span>{dtajs.respuesta3}</span>
-
-                    <Radio
-                        checked={selectValue === "D"}
-                        onChange={handlerElegirRespuesta}
-                        value="D"
-                        name="radio-button-demo"
-                        inputProps={{ 'aria-label': 'A' }}
-                    />
-                    <span>{dtajs.respuesta4}</span>
- */
+export default Lengua;

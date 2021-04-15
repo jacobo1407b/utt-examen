@@ -1,0 +1,13 @@
+.ui.orange.button,
+.ui.orange.buttons .button {
+  background-color: #fe6806 !important;
+  color: #fff;
+}
+
+.my-color {
+  color: #fff;
+}
+.my-color:hover {
+  color: #fff;
+  cursor: pointer;
+}

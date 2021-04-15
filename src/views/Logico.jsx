@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import "../Assets/preguntas.css";
-import { withRouter } from "react-router-dom";
-import data from "../Assets/Examen_PensaAnlitico.json";
-import Pregunta1 from "../Components/Examen/Pregunta1";
-import Pagination from "@material-ui/lab/Pagination";
 import { makeStyles } from "@material-ui/core/styles";
+import data from "../Assets/exam_PensaLogic.json";
+import Pagination from "@material-ui/lab/Pagination";
+import Logic from "../Components/Examen/Logic";
+import { withRouter } from "react-router-dom";
+import { Container } from "semantic-ui-react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Exam1 = ({
+const Logico = ({
   dataAlumno,
   history,
   setCerrar,
@@ -24,16 +24,20 @@ const Exam1 = ({
   setExamen,
 }) => {
   useEffect(() => {
-    setExamen("exam");
     setCerrar(false);
-    if (!dataAlumno.activeExam1) {
+    setExamen("logico");
+    if (!dataAlumno.activeLogic) {
       history.push("/");
     }
     return () => {
       setCerrar(true);
     };
-  }, [history, dataAlumno.activeExam1, setCerrar, setExamen]);
+  }, [history, dataAlumno.activeLogic, setCerrar, setExamen]);
+  console.log(dataAlumno);
   const classes = useStyles();
+  const handleChange = (event, value) => {
+    history.push(`/logico/${value}`);
+  };
   function elegir(numero) {
     if (numero <= 0) {
       history.goBack();
@@ -42,20 +46,18 @@ const Exam1 = ({
       history.goBack();
     }
     return (
-      <Pregunta1
+      <Logic
         dtajs={data[parseInt(numero)]}
-        dataAlumno={dataAlumno.test ? dataAlumno.test : []}
+        dataAlumno={dataAlumno.logico ? dataAlumno.logico : []}
         todos={dataAlumno}
         posision={numero}
       />
     );
   }
-  const handleChange = (event, value) => {
-    history.push(`/exam1/${value}`);
-  };
+
   return (
-    <div>
-      {elegir(match.params.num)}
+    <Container>
+      >{elegir(match.params.num)}
       <div className={classes.root}>
         <Pagination
           className=" transparent center-align"
@@ -66,8 +68,8 @@ const Exam1 = ({
           onChange={handleChange}
         />
       </div>
-    </div>
+    </Container>
   );
 };
 
-export default withRouter(Exam1);
+export default withRouter(Logico);
